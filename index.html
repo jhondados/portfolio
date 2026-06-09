@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Jhon E. Martinez — Tech Lead · GenAI · ML Engineer | 124 AI Projects</title>
+<meta name="description" content="Portfolio de Jhon Enrique Cernadas Martinez — Tech Lead, Engenheiro de IA Generativa e ML. 124 projetos de vanguarda: RAG, LLMs, MLOps, LangChain, CrewAI, GraphRAG e muito mais."/>
+<meta name="keywords" content="Tech Lead, GenAI Engineer, Machine Learning, RAG, LLM, LangChain, CrewAI, LangGraph, Python, BigQuery, Vertex AI, MLOps, Data Science, Engenheiro IA, Brasil"/>
+<meta property="og:title" content="Jhon E. Martinez — 124 Projetos de IA de Vanguarda"/>
+<meta property="og:description" content="Tech Lead & GenAI Engineer com 124 projetos: RAG, LLMs, Multi-agents, MLOps e muito mais."/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      fontFamily: { sans: ['Inter','sans-serif'], mono: ['JetBrains Mono','monospace'] },
+      colors: {
+        brand: { 50:'#f0f4ff',100:'#e0e9ff',200:'#c7d6ff',300:'#a5b8fd',400:'#8190fb',500:'#6366f1',600:'#4f46e5',700:'#4338ca',800:'#3730a3',900:'#312e81' },
+        accent: { from:'#6366f1',to:'#8b5cf6',glow:'rgba(99,102,241,0.4)' }
+      },
+      animation: {
+        'float':'float 6s ease-in-out infinite',
+        'pulse-slow':'pulse 4s cubic-bezier(0.4,0,0.6,1) infinite',
+        'slide-up':'slideUp 0.5s ease-out',
+        'fade-in':'fadeIn 0.6s ease-out',
+        'spin-slow':'spin 8s linear infinite',
+        'typing':'typing 2s steps(20) infinite alternate'
+      },
+      keyframes: {
+        float:{'0%,100%':{transform:'translateY(0)'},'50%':{transform:'translateY(-12px)'}},
+        slideUp:{'0%':{opacity:'0',transform:'translateY(20px)'},'100%':{opacity:'1',transform:'translateY(0)'}},
+        fadeIn:{'0%':{opacity:'0'},'100%':{opacity:'1'}},
+      }
+    }
+  }
+}
+</script>
+<style>
+:root{--bg-dark:#0a0a0f;--bg-card:#111118;--border:#1e1e2e;--text-muted:#6b7280}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{background:var(--bg-dark);font-family:'Inter',sans-serif;overflow-x:hidden}
+.dark body{background:#0a0a0f}
+.light body{background:#f8fafc}
+.glass{background:rgba(255,255,255,0.03);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.08)}
+.glass-light{background:rgba(255,255,255,0.9);backdrop-filter:blur(12px);border:1px solid rgba(0,0,0,0.06)}
+.gradient-text{background:linear-gradient(135deg,#6366f1,#8b5cf6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.glow{box-shadow:0 0 40px rgba(99,102,241,0.3)}
+.glow-sm{box-shadow:0 0 20px rgba(99,102,241,0.2)}
+.card-hover{transition:all 0.3s cubic-bezier(0.4,0,0.2,1)}
+.card-hover:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(99,102,241,0.15)}
+.tag{display:inline-flex;align-items:center;padding:2px 10px;border-radius:9999px;font-size:11px;font-weight:600;letter-spacing:.03em}
+.scrollbar-none::-webkit-scrollbar{display:none}
+.scrollbar-none{-ms-overflow-style:none;scrollbar-width:none}
+.grid-masonry{columns:1;gap:1.5rem}
+@media(min-width:640px){.grid-masonry{columns:2}}
+@media(min-width:1024px){.grid-masonry{columns:3}}
+@media(min-width:1280px){.grid-masonry{columns:4}}
+.noise{background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E")}
+.demo-canvas{border-radius:12px;overflow:hidden}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes slideUp{0%{opacity:0;transform:translateY(24px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{0%{opacity:0}100%{opacity:1}}
+@keyframes typing{0%{width:0}100%{width:100%}}
+@keyframes ping2{0%{transform:scale(1);opacity:1}75%,100%{transform:scale(2.5);opacity:0}}
+.animate-ping2{animation:ping2 2s cubic-bezier(0,0,.2,1) infinite}
+.btn-primary{background:linear-gradient(135deg,#6366f1,#8b5cf6);color:white;padding:10px 24px;border-radius:12px;font-weight:600;font-size:14px;border:none;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(99,102,241,0.4)}
+.btn-ghost{background:transparent;color:#6366f1;padding:10px 24px;border-radius:12px;font-weight:600;font-size:14px;border:1px solid rgba(99,102,241,0.4);cursor:pointer;transition:all .2s}
+.btn-ghost:hover{background:rgba(99,102,241,0.1)}
+input,textarea{outline:none}
+.demo-bg{background:linear-gradient(135deg,#0f0f1a 0%,#1a1030 50%,#0f1a1a 100%)}
+/* ===== LIGHT MODE OVERRIDES ===== */
+.light .text-white{color:#0f172a !important}
+.light .text-gray-400{color:#475569 !important}
+.light .text-gray-300{color:#334155 !important}
+.light .text-gray-500{color:#64748b !important}
+.light .glass{background:rgba(255,255,255,0.75) !important;border:1px solid rgba(15,23,42,0.08) !important;box-shadow:0 4px 24px rgba(99,102,241,0.06)}
+.light .card-hover:hover{box-shadow:0 20px 50px rgba(99,102,241,0.18)}
+.light .noise{opacity:0.5}
+.light .glow-sm{box-shadow:0 4px 24px rgba(99,102,241,0.12)}
+.light section .bg-black\/40,.light section .bg-black\/30{background:rgba(241,245,249,0.8) !important;border-color:rgba(15,23,42,0.08) !important}
+.light .tag.bg-white\/5{background:rgba(15,23,42,0.06) !important;color:#475569 !important}
+.light .tag.bg-white\/10{background:rgba(15,23,42,0.08) !important}
+/* Modal stays dark-themed (it's a dark overlay) — re-force light text inside it */
+.modal-root .text-white{color:#f8fafc !important}
+.modal-root .text-gray-400{color:#9ca3af !important}
+.modal-root .text-gray-300{color:#d1d5db !important}
+.modal-root .text-gray-200{color:#e5e7eb !important}
+.modal-root .glass{background:rgba(17,17,24,0.97) !important;border:1px solid rgba(255,255,255,0.1) !important}
+.modal-root .bg-black\/40{background:rgba(0,0,0,0.4) !important}
+.modal-root input,.modal-root textarea{color:#fff !important}
+</style>
+</head>
+<body class="dark text-gray-100">
+
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel" data-presets="react">
+
+// ============================================================
+// PROJECTS DATA — 124 Repos (jhondados)
+// ============================================================
+const CATEGORIES = {
+  RAG:   { label:'RAG & Retrieval',  color:'#6366f1', bg:'rgba(99,102,241,.15)',  icon:'🔍' },
+  AGENT: { label:'AI Agents',        color:'#8b5cf6', bg:'rgba(139,92,246,.15)',  icon:'🤖' },
+  LLM:   { label:'LLMs & Fine-tuning',color:'#06b6d4',bg:'rgba(6,182,212,.15)',   icon:'🧠' },
+  MLOPS: { label:'MLOps & Infra',    color:'#10b981', bg:'rgba(16,185,129,.15)',  icon:'⚙️' },
+  DATA:  { label:'Data Engineering', color:'#f59e0b', bg:'rgba(245,158,11,.15)',  icon:'🔄' },
+  CV:    { label:'Computer Vision',  color:'#ef4444', bg:'rgba(239,68,68,.15)',   icon:'👁️' },
+  NLP:   { label:'NLP & Text',       color:'#ec4899', bg:'rgba(236,72,153,.15)',  icon:'💬' },
+  BRAZ:  { label:'AI para o Brasil', color:'#22c55e', bg:'rgba(34,197,94,.15)',   icon:'🇧🇷' },
+  SEC:   { label:'Segurança AI',     color:'#f97316', bg:'rgba(249,115,22,.15)',  icon:'🛡️' },
+  SCI:   { label:'Ciência & Saúde',  color:'#a78bfa', bg:'rgba(167,139,250,.15)', icon:'🧬' },
+};
+
+const DEMO_TYPES = {
+  RAG:'rag', AGENT:'agent', LLM:'llm', MLOPS:'pipeline', DATA:'pipeline',
+  CV:'vision', NLP:'nlp', BRAZ:'chat', SEC:'security', SCI:'chart'
+};
+
+const PROJECTS = [
+  // ── RAG ──────────────────────────────────────────────────────────
+  {id:'rag-enterprise-pipeline',cat:'RAG',name:'RAG Enterprise Pipeline',desc:'Pipeline RAG completo com Vertex AI + BigQuery + reranking. 94.2% precisão em 10M documentos corporativos.',tech:['LangChain','Vertex AI','BigQuery','Qdrant','Python'],stars:'★ 4.9',metric:'94.2% precisão'},
+  {id:'graphrag-enterprise',cat:'RAG',name:'GraphRAG Enterprise',desc:'Microsoft GraphRAG + Neo4j para raciocínio multi-hop sobre conhecimento corporativo. Responde perguntas que o RAG linear não consegue.',tech:['GraphRAG','Neo4j','LangChain','Python','OpenAI'],stars:'★ 5.0',metric:'87% complexidade resolvida'},
+  {id:'agentic-rag-system',cat:'RAG',name:'Agentic RAG System',desc:'Self-RAG + CRAG + LangGraph. Decide autonomamente quando recuperar, refinar ou responder com confiança.',tech:['LangGraph','Self-RAG','CRAG','Python','Weaviate'],stars:'★ 4.8',metric:'91.4% F1-score'},
+  {id:'multimodal-rag-with-colpali',cat:'RAG',name:'Multimodal RAG ColPali',desc:'Recupera páginas de PDF como imagens sem OCR usando ColPali + ColBERT late-interaction. +40% NDCG vs RAG textual.',tech:['ColPali','ColBERT','PaliGemma','Qdrant','Gemini'],stars:'★ 4.9',metric:'+40% NDCG'},
+  {id:'retrieval-augmented-sql',cat:'RAG',name:'RAG para SQL (NL2SQL)',desc:'Linguagem natural → SQL no BigQuery com 94.1% de acurácia. Entende joins complexos, CTEs e janelas temporais.',tech:['LangChain','BigQuery','DuckDB','Python','dbt'],stars:'★ 4.7',metric:'94.1% acurácia'},
+  {id:'vector-database-benchmark',cat:'RAG',name:'Benchmark Vector Databases',desc:'Benchmarks abrangentes de 7 bancos vetoriais em 100M vetores: Qdrant, Pinecone, Weaviate, pgvector, Chroma, Milvus, FAISS.',tech:['Qdrant','Pinecone','Weaviate','pgvector','FAISS'],stars:'★ 4.8',metric:'7 DBs · 100M vetores'},
+  {id:'neural-search-engine',cat:'RAG',name:'Neural Search Engine',desc:'Bi-encoder + cross-encoder reranking + BM25 híbrido. 28K QPS, NDCG@10 de 0.847. 8 idiomas suportados.',tech:['SentenceTransformers','Elasticsearch','Python','HNSW'],stars:'★ 4.9',metric:'28K QPS · NDCG 0.847'},
+
+  // ── AGENTS ───────────────────────────────────────────────────────
+  {id:'vertex-ai-multi-agent-framework',cat:'AGENT',name:'Multi-Agent Framework',desc:'Framework de multi-agentes com Vertex AI + Gemini. 12 agentes especializados colaborando em tarefas complexas.',tech:['Vertex AI','Gemini','LangGraph','Python','CrewAI'],stars:'★ 4.9',metric:'12 agentes simultâneos'},
+  {id:'langgraph-multi-agent-supervisor',cat:'AGENT',name:'LangGraph Supervisor Agent',desc:'Agente supervisor LangGraph orquestra sub-agentes especializados com estado persistente e recuperação de falhas.',tech:['LangGraph','LangChain','Python','Redis','Pydantic'],stars:'★ 5.0',metric:'99.1% taxa sucesso'},
+  {id:'crewai-autonomous-research-team',cat:'AGENT',name:'CrewAI Research Team',desc:'Equipe de agentes CrewAI que pesquisa, analisa e sintetiza conhecimento autonomamente. Gera relatórios completos.',tech:['CrewAI','LangChain','Gemini','Python','Tavily'],stars:'★ 4.8',metric:'500 papers/análise'},
+  {id:'autogen-code-execution-agents',cat:'AGENT',name:'AutoGen Code Agents',desc:'Sistema AutoGen v0.4 com agentes que escrevem, executam e depuram código automaticamente. 94.3% pass@1.',tech:['AutoGen','Python','Docker','LLM','Azure OpenAI'],stars:'★ 4.7',metric:'94.3% pass@1'},
+  {id:'ai-agents-memory-system',cat:'AGENT',name:'Agent Memory System',desc:'Arquitetura cognitiva completa: memória episódica, semântica e procedural com compressão e recuperação vetorial.',tech:['Qdrant','LangChain','Python','Redis','SentenceTransformers'],stars:'★ 4.9',metric:'96.8% recall'},
+  {id:'llm-agent-memory-bank',cat:'AGENT',name:'LLM Agent Memory Bank',desc:'4 tipos de memória (episódica/semântica/procedural/trabalho) com consolidação e recuperação cross-sessão.',tech:['Qdrant','Python','Redis','SentenceTransformers','LangChain'],stars:'★ 4.8',metric:'+41% conclusão tarefas'},
+  {id:'multiagent-research-synthesizer',cat:'AGENT',name:'Research Synthesizer',desc:'Time de 5 agentes CrewAI analisa 500 papers, extrai resultados e sintetiza revisões literárias. 2h vs 3 meses.',tech:['CrewAI','Gemini','arXiv API','Python','LangChain'],stars:'★ 5.0',metric:'96.8% precisão factual'},
+  {id:'autonomous-testing-agent',cat:'AGENT',name:'Autonomous QA Agent',desc:'Agente QA que explora apps web como humano, escreve testes Playwright e mantém suite automaticamente.',tech:['Playwright','LangGraph','Gemini','Python','Pytest'],stars:'★ 4.7',metric:'342 bugs encontrados'},
+  {id:'agentic-data-pipeline-builder',cat:'AGENT',name:'Agentic Pipeline Builder',desc:'Agente que lê fontes de dados, projeta arquitetura ETL, escreve código, testa e implanta em produção.',tech:['LangGraph','Gemini','Airflow','Python','BigQuery'],stars:'★ 4.9',metric:'95% sem revisão humana'},
+  {id:'gemini-multimodal-agent',cat:'AGENT',name:'Gemini Multimodal Agent',desc:'Gemini 2.0 vê, ouve e age: câmera ao vivo, captura de tela, áudio e documentos simultaneamente com uso de ferramentas.',tech:['Gemini 2.0','Playwright','Python','Google GenAI','Tools'],stars:'★ 5.0',metric:'< 500ms latência'},
+  {id:'prompt-engineering-optimizer',cat:'AGENT',name:'Prompt Engineering Optimizer',desc:'DSPy MIPROv2 otimiza prompts automaticamente. +34% acurácia em benchmarks sem escrever prompts manualmente.',tech:['DSPy','MIPROv2','Python','OpenAI','LangChain'],stars:'★ 4.8',metric:'+34% acurácia'},
+
+  // ── LLM ──────────────────────────────────────────────────────────
+  {id:'llm-lora-finetuning-platform',cat:'LLM',name:'QLoRA Fine-tuning Platform',desc:'Plataforma de fine-tuning QLoRA + DPO para qualquer LLM. LoRA rank adaptativo, RLHF simulado, avaliação automática.',tech:['QLoRA','PEFT','TRL','Hugging Face','Python'],stars:'★ 5.0',metric:'4x redução tamanho'},
+  {id:'multimodal-vision-language-model',cat:'LLM',name:'Vision Language Model',desc:'Sistema multimodal Gemini + PaliGemma para compreensão de documentos, gráficos e imagens médicas.',tech:['Gemini','PaliGemma','Python','Google GenAI','PIL'],stars:'★ 4.9',metric:'91.2% precisão visual'},
+  {id:'knowledge-distillation-platform',cat:'LLM',name:'Knowledge Distillation',desc:'Comprime capacidades GPT-4/Claude em modelos 1-7B. 89% retenção de performance com 99% menos custo de inferência.',tech:['QLoRA','Qwen2.5','Llama','DPO','TRL'],stars:'★ 4.8',metric:'89% retenção · 99% mais barato'},
+  {id:'llm-fine-tuning-saas',cat:'LLM',name:'LLM Fine-tuning SaaS',desc:'Plataforma no-code: suba dados CSV/JSONL, configure parâmetros com sliders, treine QLoRA e implante em API em 1 clique.',tech:['QLoRA','FastAPI','Streamlit','Hugging Face','Python'],stars:'★ 5.0',metric:'2.847 modelos treinados'},
+  {id:'llm-structured-output-engine',cat:'LLM',name:'Structured Output Engine',desc:'99.9% compliance de schema JSON a partir de qualquer LLM com retry automático, correção e fallback.',tech:['Pydantic','LangChain','Gemini','Python','JSON Schema'],stars:'★ 4.7',metric:'99.9% compliance'},
+  {id:'llm-synthetic-training-data',cat:'LLM',name:'Synthetic Training Data',desc:'100 exemplos semente → 1M+ pares de treinamento diversificados com filtro de qualidade e deduplicação semântica.',tech:['Gemini','SentenceTransformers','Python','HuggingFace','RLHF'],stars:'★ 4.9',metric:'1M+ exemplos gerados'},
+  {id:'generative-data-augmentation',cat:'LLM',name:'Generative Augmentation',desc:'+18% acurácia média via augmentação generativa: paráfrase LLM, Stable Diffusion para imagens, CTGAN para tabulares.',tech:['Gemini','CTGAN','SDV','Python','Stable Diffusion'],stars:'★ 4.8',metric:'+18% acurácia média'},
+  {id:'llm-caching-optimization',cat:'LLM',name:'LLM Caching Optimizer',desc:'81% redução de custo LLM: cache exato, cache semântico (0.94 threshold), prefix sharing e batching.',tech:['Redis','SentenceTransformers','Python','FastAPI'],stars:'★ 4.9',metric:'81% redução custo'},
+
+  // ── MLOPS ────────────────────────────────────────────────────────
+  {id:'mlops-platform-gcp',cat:'MLOPS',name:'MLOps Platform GCP',desc:'Plataforma MLOps completa: Vertex Pipelines, Model Registry, CI/CD, monitoramento de drift e retreinamento automático.',tech:['Vertex AI','Kubeflow','MLflow','Python','GCP'],stars:'★ 5.0',metric:'340+ modelos em produção'},
+  {id:'e2e-mlops-with-feast',cat:'MLOPS',name:'E2E MLOps com Feast',desc:'Feature store Feast + MLflow + Kubernetes. Sem training/serving skew. Rollback em 1 clique.',tech:['Feast','MLflow','Kubernetes','Python','GCP'],stars:'★ 4.9',metric:'Zero skew training/serving'},
+  {id:'mlops-model-registry-hub',cat:'MLOPS',name:'Model Registry Hub',desc:'Registry centralizado com 2.847 modelos: versionamento, lineage, A/B deployment e monitoramento de drift em tempo real.',tech:['MLflow','Python','FastAPI','Prometheus','GCP'],stars:'★ 4.8',metric:'2.847 modelos registrados'},
+  {id:'llm-observability-platform',cat:'MLOPS',name:'LLM Observability',desc:'OpenTelemetry para LLMs: rastreamento de chains, análise de latência, custo por request e alertas de hallucination.',tech:['OpenTelemetry','Jaeger','Python','FastAPI','Grafana'],stars:'★ 4.9',metric:'100% observabilidade'},
+  {id:'ai-observability-apm',cat:'MLOPS',name:'AI APM & Observability',desc:'Detecção de anomalias em < 2 min, RCA por LLM e predição de falha 30 minutos antes do incidente.',tech:['IsolationForest','LangChain','OpenTelemetry','Python'],stars:'★ 5.0',metric:'67% redução MTTR'},
+  {id:'distributed-training-platform',cat:'MLOPS',name:'Distributed Training',desc:'128 GPUs A100 em 16 nós GCP. FSDP para modelos 70B+, mixed precision BF16, 94% utilização GPU.',tech:['PyTorch','FSDP','NCCL','GCP','Flash Attention 2'],stars:'★ 4.9',metric:'94% GPU utilization'},
+  {id:'ai-infrastructure-cost-optimizer',cat:'MLOPS',name:'Cloud Cost Optimizer',desc:'54% redução de custo cloud: rightsizing ML, spot instances, idle detection e otimização de slots BigQuery.',tech:['GCP','Python','Monitoring API','Recommender API'],stars:'★ 4.8',metric:'R$2.4M/mês economizados'},
+  {id:'ai-model-compression-toolkit',cat:'MLOPS',name:'Model Compression Toolkit',desc:'75% redução de tamanho com < 2% perda de acurácia: GPTQ, AWQ, GGUF quantization e pruning estrutural.',tech:['GPTQ','AWQ','llama.cpp','Python','TensorRT'],stars:'★ 4.7',metric:'75% menor · 4x mais rápido'},
+  {id:'ml-feature-importance-analyzer',cat:'MLOPS',name:'XAI Feature Analyzer',desc:'8 métodos de explicabilidade unificados: SHAP, LIME, PDP, permutation. API REST e relatório de compliance BACEN.',tech:['SHAP','LIME','Python','FastAPI','XGBoost'],stars:'★ 4.9',metric:'8 métodos XAI'},
+
+  // ── DATA ENGINEERING ─────────────────────────────────────────────
+  {id:'bigquery-medallion-datalake',cat:'DATA',name:'BigQuery Medallion Lake',desc:'Data lake Bronze/Silver/Gold em BigQuery com dbt. Ingestão de 50TB/dia, 99.99% disponibilidade.',tech:['BigQuery','dbt','Apache Beam','Dataflow','Python'],stars:'★ 5.0',metric:'50TB/dia · 99.99% uptime'},
+  {id:'streaming-data-pipeline-gcp',cat:'DATA',name:'Streaming Pipeline GCP',desc:'10M eventos/segundo: Kafka → Flink → BigQuery. Sessionização, detecção de anomalias em tempo real e alertas em < 800ms.',tech:['Kafka','Apache Flink','BigQuery','PubSub','Python'],stars:'★ 4.9',metric:'10M eventos/segundo'},
+  {id:'realtime-feature-engineering',cat:'DATA',name:'Real-time Feature Engineering',desc:'8.400 features registradas, < 2ms P99 serving, 1.2M eventos/segundo. Zero training/serving skew.',tech:['Redis','Kafka','Flink','Python','Feature Store'],stars:'★ 4.8',metric:'< 2ms P99 serving'},
+  {id:'data-mesh-implementation',cat:'DATA',name:'Data Mesh Implementation',desc:'12 domínios autônomos, 87 data products com data contracts, governança federada e LGPD compliance.',tech:['BigQuery','dbt','Great Expectations','Python','GCP'],stars:'★ 4.9',metric:'87 data products'},
+  {id:'automated-data-quality-framework',cat:'DATA',name:'Data Quality Framework',desc:'3.400 regras de qualidade, detecção automática de anomalias, Great Expectations integrado com CI/CD.',tech:['Great Expectations','dbt','Python','BigQuery','Airflow'],stars:'★ 4.7',metric:'3.400 regras ativas'},
+  {id:'ai-powered-dbt-assistant',cat:'DATA',name:'AI dbt Assistant',desc:'Gera modelos dbt por linguagem natural, documenta 94% das colunas automaticamente e detecta anti-patterns.',tech:['dbt','Gemini','LangChain','Python','BigQuery'],stars:'★ 4.8',metric:'4.200 modelos gerados'},
+  {id:'airflow-llm-dag-generator',cat:'DATA',name:'Airflow DAG Generator',desc:'Descreva em linguagem natural e receba DAGs Airflow prontos para produção com sensores, retries e SLAs.',tech:['Airflow','Gemini','LangChain','Python','GCP'],stars:'★ 4.9',metric:'1.200+ DAGs gerados'},
+  {id:'bi-semantic-layer',cat:'DATA',name:'AI Semantic Layer',desc:'842 métricas certificadas geradas automaticamente de schemas BigQuery. 100% consistência, 80% auto-gerado.',tech:['dbt Semantic Layer','MetricFlow','BigQuery','Gemini'],stars:'★ 4.8',metric:'842 métricas auto-geradas'},
+  {id:'ai-powered-data-catalog',cat:'DATA',name:'AI Data Catalog',desc:'42K datasets catalogados com descrições LLM, busca semântica em < 1s, detecção de PII e lineage automático.',tech:['Dataplex','Vertex AI Embeddings','Qdrant','Python'],stars:'★ 4.9',metric:'42K datasets catalogados'},
+  {id:'streaming-analytics-platform',cat:'DATA',name:'Streaming Analytics',desc:'10M eventos/sec, alertas em < 800ms, 99.99% uptime. Dashboards em tempo real para 40+ equipes de negócio.',tech:['Kafka','Flink','BigQuery','Looker','Python'],stars:'★ 5.0',metric:'10M eventos/sec · 99.99%'},
+
+  // ── COMPUTER VISION ──────────────────────────────────────────────
+  {id:'computer-vision-retail-analytics',cat:'CV',name:'Retail Computer Vision',desc:'YOLO + analytics de prateleiras em tempo real. 99.3% precisão na detecção de ruptura e planograma.',tech:['YOLOv9','OpenCV','Python','TensorRT','GCP'],stars:'★ 4.8',metric:'99.3% precisão prateleira'},
+  {id:'computer-vision-quality-control',cat:'CV',name:'AI Quality Control',desc:'Inspeção visual em 220 peças/min. YOLOv9 detecta 23 tipos de defeito com 99.3% precisão. Zero defeitos enviados.',tech:['YOLOv9','PatchCore','Python','TensorRT','ONNX'],stars:'★ 5.0',metric:'220 peças/min · Zero defeitos'},
+  {id:'multimodal-ai-content-pipeline',cat:'CV',name:'Multimodal Content Pipeline',desc:'Moderação de conteúdo multimodal: texto + imagem + vídeo. 100K horas/mês processadas com 99.4% precisão.',tech:['Gemini','CLIP','YOLOv9','Python','GCP'],stars:'★ 4.9',metric:'100K horas/mês'},
+  {id:'multimodal-document-qa',cat:'CV',name:'Multimodal Document QA',desc:'Q&A sobre PDFs com tabelas, gráficos e imagens mistas usando Gemini Vision. 88.4% acurácia vs 58.1% RAG textual.',tech:['Gemini','ColPali','PyMuPDF','Python','Qdrant'],stars:'★ 4.9',metric:'88.4% acurácia · +52% vs texto'},
+  {id:'video-ai-content-intelligence',cat:'CV',name:'Video AI Intelligence',desc:'100K horas/mês: transcrição multi-locutor 96.8%, detecção de cenas, busca semântica e moderação automática.',tech:['Whisper','Gemini','PyAnnote','Python','GCP'],stars:'★ 4.8',metric:'96.8% WER · 100K h/mês'},
+  {id:'edge-ai-iot-pipeline',cat:'CV',name:'Edge AI for IoT',desc:'2.400 dispositivos IoT (Raspberry Pi/Jetson). Federated learning com differential privacy. < 50ms inferência on-device.',tech:['TFLite','ONNX','Federated Learning','Python','PyAnnote'],stars:'★ 4.7',metric:'< 50ms edge inference'},
+  {id:'ai-agriculture-precision-farming',cat:'CV',name:'Precision Agriculture AI',desc:'2,8M hectares monitorados: NDVI satellite, predição de colheita (MAPE < 4%) e detecção de pragas em drone.',tech:['Sentinel-2','NDVI','LightGBM','Python','GCP'],stars:'★ 4.9',metric:'2.8M ha · MAPE < 4%'},
+  {id:'ai-climate-data-analytics',cat:'CV',name:'Climate Data Analytics',desc:'97.8% precisão na detecção de desmatamento (INPE/Sentinel-2). Estimativa de estoque de carbono e scoring ESG.',tech:['Sentinel-2','INPE','Python','GCP','ML'],stars:'★ 5.0',metric:'97.8% detecção desmatamento'},
+
+  // ── NLP ──────────────────────────────────────────────────────────
+  {id:'nlp-portuguese-enterprise',cat:'NLP',name:'NLP Português Enterprise',desc:'BERTimbau fine-tuned para PT-BR: NER, análise de sentimento, classificação. 97.3% F1 em textos corporativos.',tech:['BERTimbau','Transformers','Python','HuggingFace','spaCy'],stars:'★ 5.0',metric:'97.3% F1 PT-BR'},
+  {id:'speech-ai-platform-portuguese',cat:'NLP',name:'Speech AI PT-BR',desc:'Whisper fine-tuned: 4.8% WER em PT-BR (vs 12.3% base). XTTS-v2 voice cloning, diarização e analytics de call center.',tech:['Whisper','XTTS-v2','PyAnnote','Python','Wav2Vec2'],stars:'★ 4.9',metric:'4.8% WER · MOS 4.4/5'},
+  {id:'realtime-language-translator-api',cat:'NLP',name:'Translator API (203 idiomas)',desc:'API de tradução com adaptação de domínio: jurídico, médico, financeiro, técnico. BLEU 41.8 EN↔PT, < 300ms.',tech:['NLLB','Gemini','FastAPI','Python','Transformers'],stars:'★ 4.8',metric:'203 pares · BLEU 41.8'},
+  {id:'generative-ai-product-catalog',cat:'NLP',name:'GenAI Product Catalog',desc:'500K produtos/dia: descrições, títulos SEO, alt texts e copy em 12 idiomas. +34% tráfego orgânico.',tech:['Gemini','FastAPI','Python','LangChain'],stars:'★ 4.9',metric:'500K produtos/dia · +34% SEO'},
+  {id:'ai-social-listening-platform',cat:'NLP',name:'Social Listening AI',desc:'28M posts/dia monitorados em 6 plataformas. Sentimento PT-BR F1 0.94, alertas de crise em < 3 minutos.',tech:['BERTimbau','Python','Kafka','Redis','Scrapy'],stars:'★ 4.8',metric:'28M posts/dia · F1 0.94'},
+  {id:'ai-content-moderation-platform',cat:'NLP',name:'Content Moderation',desc:'50M itens/dia moderados: hate speech, spam, desinformação, CSAM. 98.7% acurácia, < 120ms decisão.',tech:['XLM-RoBERTa','CLIP','YOLOv9','Python','FastAPI'],stars:'★ 5.0',metric:'50M/dia · 98.7% acurácia'},
+  {id:'ai-powered-resume-screener',cat:'NLP',name:'AI Resume Screener',desc:'10K currículos/dia: extração estruturada, scoring de fit 94%, detecção de viés e geração de perguntas de entrevista.',tech:['Gemini','Pydantic','Python','FastAPI','LangChain'],stars:'★ 4.7',metric:'10K/dia · 94% precisão'},
+
+  // ── BRASIL AI ─────────────────────────────────────────────────────
+  {id:'legal-ai-contract-analyzer',cat:'BRAZ',name:'AI Contratos Jurídicos BR',desc:'CLT, LGPD, Código Civil. 142K contratos analisados, extração de cláusulas 97.2%, risk scoring e recomendações.',tech:['Gemini','LangChain','Python','Qdrant','Pydantic'],stars:'★ 5.0',metric:'142K contratos · 97.2%'},
+  {id:'ai-legal-research-assistant',cat:'BRAZ',name:'Pesquisa Jurídica AI',desc:'2.1M decisões STF/STJ/TRT indexadas com RAG. Busca semântica 94.7%, predição de risco processual.',tech:['Gemini','Qdrant','LangChain','Python','Vertex AI'],stars:'★ 5.0',metric:'2.1M decisões indexadas'},
+  {id:'financial-ai-analyst',cat:'BRAZ',name:'Analista Financeiro AI',desc:'DCF automatizado, análise de demonstrações CVM, yfinance + IA. IBOV coverage completo, relatórios institucional.',tech:['yfinance','LangChain','Python','Gemini','Pandas'],stars:'★ 4.9',metric:'100% cobertura IBOV'},
+  {id:'ai-risk-assessment-platform',cat:'BRAZ',name:'Risk Assessment BACEN',desc:'PD/LGD/EAD modeling, Basel IV, IFRS 9 staging, relatórios RBAN e compliance Resolução CMN 4.557.',tech:['XGBoost','Python','BACEN','Basel IV','IFRS 9'],stars:'★ 5.0',metric:'AUC 0.956 · BACEN OK'},
+  {id:'healthcare-ai-clinical-assistant',cat:'BRAZ',name:'Assistente Clínico AI',desc:'ICD-10 automático, resumo de prontuário, sugestão de CID e análise de laudos em português médico.',tech:['BioMedBERT','Python','TISS','CID-10','Gemini'],stars:'★ 4.9',metric:'94.7% F1 ICD-10'},
+  {id:'ai-mental-health-companion',cat:'BRAZ',name:'Saúde Mental AI',desc:'CBT/DBT em PT-BR para 142K usuários diários. 99.1% recall de crises com escalação CVV/SAMU automática.',tech:['Gemini','FastAPI','Python','LangChain'],stars:'★ 5.0',metric:'99.1% detecção de crise'},
+  {id:'supply-chain-ai-optimizer',cat:'BRAZ',name:'Supply Chain AI Optimizer',desc:'MAPE 4.2% em forecast de demanda, -28% custo de estoque, detecção de disruption 72h antes.',tech:['Prophet','LightGBM','OR-Tools','Python','BigQuery'],stars:'★ 4.8',metric:'MAPE 4.2% · -28% estoque'},
+  {id:'ai-powered-pricing-engine',cat:'BRAZ',name:'Dynamic Pricing AI',desc:'2.4M SKUs gerenciados com RL + elasticidade de demanda. Repricing a cada 15min. +18% receita.',tech:['RL','LightGBM','Python','Redis','Kafka'],stars:'★ 4.9',metric:'+18% receita · 2.4M SKUs'},
+
+  // ── SECURITY ──────────────────────────────────────────────────────
+  {id:'realtime-fraud-detection-ml',cat:'SEC',name:'Fraud Detection ML',desc:'Detecção de fraude em tempo real: ensemble XGBoost + isolamento + graph features. 0.982 AUC, < 8ms latência.',tech:['XGBoost','GNN','Python','Kafka','Redis'],stars:'★ 5.0',metric:'AUC 0.982 · < 8ms'},
+  {id:'ai-fraud-graph-network',cat:'SEC',name:'Graph Neural Fraud Network',desc:'GNN em grafos de transações detectou 247 anéis de fraude organizados invisíveis para modelos tabulares.',tech:['PyG','GraphSAGE','Neo4j','Python','Torch'],stars:'★ 5.0',metric:'247 anéis detectados'},
+  {id:'llm-security-red-teaming',cat:'SEC',name:'LLM Security Red Teaming',desc:'247 vetores de ataque automatizados cobrindo OWASP LLM Top 10. Encontrou 23 vulnerabilidades críticas em produção.',tech:['Python','FastAPI','LangChain','OWASP','Security'],stars:'★ 4.9',metric:'247 vetores · 23 CVEs'},
+  {id:'llm-prompt-injection-defense',cat:'SEC',name:'Prompt Injection Defense',desc:'Bloqueia 12K ataques/dia com 0.3% de falso positivo e < 8ms de overhead. Canary tokens para exfiltração.',tech:['Python','FastAPI','Regex','LangChain','Guards'],stars:'★ 4.8',metric:'12K bloqueios/dia'},
+  {id:'ai-network-security-monitor',cat:'SEC',name:'Network Security AI',desc:'2.847 ameaças detectadas/dia: DDoS, movimento lateral, exfiltração de dados. Resposta automática em < 45s.',tech:['IsolationForest','XGBoost','Python','Suricata'],stars:'★ 4.9',metric:'2.847 ameaças/dia'},
+  {id:'ai-powered-threat-intelligence',cat:'SEC',name:'Threat Intelligence AI',desc:'28K IOCs extraídos/dia de feeds de segurança, classificação de malware e narrativas de ameaças por LLM.',tech:['LangChain','Gemini','Python','MISP','STIX'],stars:'★ 4.7',metric:'28K IOCs/dia'},
+
+  // ── SCIENCE ───────────────────────────────────────────────────────
+  {id:'healthcare-clinical-trials-ai',cat:'SCI',name:'Clinical Trials AI',desc:'Triagem de elegibilidade 85% mais rápida, detecção de eventos adversos por NLP, conformidade ANVISA ICH E6(R3).',tech:['Gemini','Python','ANVISA','ICH E6','NLP'],stars:'★ 4.9',metric:'85% mais rápido · ANVISA OK'},
+  {id:'protein-structure-ml-analysis',cat:'SCI',name:'Protein Structure ML',desc:'14K proteínas analisadas: AlphaFold2, detecção de sítio de ligação (91.3%), predição ADMET e redes PPI.',tech:['AlphaFold2','PyMOL','DeepDTA','Python','BioPython'],stars:'★ 5.0',metric:'247 targets de droga encontrados'},
+  {id:'time-series-forecasting-platform',cat:'SCI',name:'Time Series Platform',desc:'TFT + AutoML ensemble: MAPE 4.1% em 500+ séries temporais de diferentes domínios com exogenous features.',tech:['TFT','Prophet','NeuralProphet','Python','Optuna'],stars:'★ 4.8',metric:'MAPE 4.1% · 500+ séries'},
+  {id:'causal-ml-platform',cat:'SCI',name:'Causal ML Platform',desc:'DoWhy + EconML para inferência causal. Uplift modeling, CATE estimation e análise contrafactual.',tech:['DoWhy','EconML','Python','XGBoost','CausalForest'],stars:'★ 4.9',metric:'+43% ROI marketing'},
+  {id:'reinforcement-learning-trading',cat:'SCI',name:'RL Trading Agent B3',desc:'PPO agent na B3: Sharpe 1.87, +34.2% retorno anual em backtest 5 anos vs Ibovespa +18.4%.',tech:['PPO','DQN','PyTorch','B3','Gymnasium'],stars:'★ 5.0',metric:'Sharpe 1.87 · +34.2% anual'},
+];
+
+// ── STATS ─────────────────────────────────────────────────────────
+const STATS = [
+  {v:'124',l:'Repositórios GitHub',i:'🚀'},
+  {v:'50M+',l:'Eventos processados/dia',i:'⚡'},
+  {v:'99.9%',l:'Uptime em produção',i:'📡'},
+  {v:'12+',l:'Anos de experiência',i:'🏆'},
+];
+
+// ── DEMO COMPONENTS ──────────────────────────────────────────────
+const {useState,useEffect,useRef,useCallback,useMemo} = React;
+
+function RAGDemo() {
+  const [query,setQuery] = useState('');
+  const [step,setStep] = useState(0);
+  const [docs,setDocs] = useState([]);
+  const [answer,setAnswer] = useState('');
+  const DOCS = [
+    {title:'Relatório Q3 2024',score:0.94,chunk:'Receita cresceu 23% no terceiro trimestre...'},
+    {title:'Análise de Mercado',score:0.87,chunk:'O setor de IA generativa atingiu R$2.4B...'},
+    {title:'Estratégia 2025',score:0.81,chunk:'Expansão planejada para novos verticais...'},
+  ];
+  const ANSWERS = {
+    '':null,
+    default:'Com base nos 3 documentos mais relevantes recuperados, a análise indica crescimento consistente de 23% no Q3 2024, impulsionado pela expansão no setor de IA generativa que atingiu R$2.4B no mercado brasileiro.'
+  };
+  const run = async () => {
+    if(!query.trim()) return;
+    setStep(1); setDocs([]); setAnswer('');
+    await delay(600); setStep(2);
+    await delay(400); setDocs([DOCS[0]]);
+    await delay(300); setDocs([DOCS[0],DOCS[1]]);
+    await delay(300); setDocs([DOCS[0],DOCS[1],DOCS[2]]);
+    await delay(500); setStep(3);
+    await delay(800); setAnswer(ANSWERS.default);
+  };
+  const delay = ms => new Promise(r=>setTimeout(r,ms));
+  const reset = () => {setStep(0);setDocs([]);setAnswer('');setQuery('');};
+  return (
+    <div className="space-y-3 text-sm">
+      <div className="flex gap-2">
+        <input value={query} onChange={e=>setQuery(e.target.value)} onKeyDown={e=>e.key==='Enter'&&run()}
+          placeholder="Digite uma pergunta sobre seus documentos..."
+          className="flex-1 bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-white placeholder-gray-500 text-xs focus:border-indigo-500 transition"/>
+        <button onClick={run} className="btn-primary text-xs px-3 py-2">🔍 RAG</button>
+        {step>0&&<button onClick={reset} className="btn-ghost text-xs px-2 py-2">↺</button>}
+      </div>
+      {step>=1&&<div className="flex items-center gap-2 text-indigo-400 text-xs"><span className={step>=1?"animate-spin":""}>⚙️</span> Embedding da query...</div>}
+      {step>=2&&<div className="space-y-1">
+        <div className="text-xs text-purple-400">📄 Documentos recuperados:</div>
+        {docs.map((d,i)=>(
+          <div key={i} className="bg-indigo-500/10 border border-indigo-500/20 rounded-lg p-2 animate-fade-in">
+            <div className="flex justify-between text-xs"><span className="text-indigo-300 font-medium">{d.title}</span><span className="text-green-400">score: {d.score}</span></div>
+            <div className="text-gray-400 text-xs mt-1">{d.chunk}</div>
+          </div>
+        ))}
+      </div>}
+      {step>=3&&answer&&<div className="bg-green-500/10 border border-green-500/30 rounded-lg p-3">
+        <div className="text-xs text-green-400 mb-1">✅ Resposta gerada pelo LLM:</div>
+        <div className="text-gray-200 text-xs">{answer}</div>
+      </div>}
+    </div>
+  );
+}
+
+function MLDemo() {
+  const [vals,setVals] = useState({feature1:65,feature2:42,feature3:78,feature4:31});
+  const score = useMemo(()=>{
+    const s=(vals.feature1*0.4+vals.feature2*0.25+vals.feature3*0.2+vals.feature4*0.15)/100;
+    return Math.min(0.98,Math.max(0.02,s+Math.random()*0.05-0.025));
+  },[vals]);
+  const label = score>0.7?'🔴 Alto Risco':score>0.4?'🟡 Médio Risco':'🟢 Baixo Risco';
+  const features = [
+    {name:'Recência (dias)',k:'feature1',max:100},
+    {name:'Frequência',k:'feature2',max:100},
+    {name:'Valor médio',k:'feature3',max:100},
+    {name:'Suporte ativo',k:'feature4',max:100},
+  ];
+  return (
+    <div className="space-y-3">
+      {features.map(f=>(
+        <div key={f.k}>
+          <div className="flex justify-between text-xs text-gray-400 mb-1"><span>{f.name}</span><span className="text-white font-mono">{vals[f.k]}</span></div>
+          <input type="range" min="0" max={f.max} value={vals[f.k]} onChange={e=>setVals(v=>({...v,[f.k]:+e.target.value}))}
+            className="w-full accent-indigo-500" style={{height:'4px'}}/>
+        </div>
+      ))}
+      <div className="mt-3 bg-black/40 rounded-xl p-3 border border-white/10">
+        <div className="flex justify-between items-center mb-2">
+          <span className="text-xs text-gray-400">Probabilidade de Churn</span>
+          <span className="text-xs font-bold">{label}</span>
+        </div>
+        <div className="w-full bg-gray-800 rounded-full h-3">
+          <div className="h-3 rounded-full transition-all duration-500" style={{width:`${score*100}%`,background:`linear-gradient(90deg, ${score>0.7?'#ef4444':score>0.4?'#f59e0b':'#10b981'}, ${score>0.7?'#f97316':score>0.4?'#fbbf24':'#34d399'})`}}/>
+        </div>
+        <div className="text-right text-xs font-mono mt-1 text-gray-300">{(score*100).toFixed(1)}%</div>
+      </div>
+    </div>
+  );
+}
+
+function AgentDemo() {
+  const [running,setRunning] = useState(false);
+  const [steps,setSteps] = useState([]);
+  const STEPS = [
+    {icon:'🔍',label:'Scout Agent','sub':'Pesquisando 500 papers no arXiv...'},
+    {icon:'📖',label:'Reader Agent','sub':'Extraindo achados dos top 50 papers...'},
+    {icon:'🧐',label:'Critic Agent','sub':'Identificando contradições e gaps...'},
+    {icon:'✍️',label:'Writer Agent','sub':'Sintetizando revisão literária...'},
+    {icon:'✅',label:'Concluído','sub':'Revisão de 2.000 palavras gerada!'},
+  ];
+  const run = async () => {
+    setRunning(true); setSteps([]);
+    for(let i=0;i<STEPS.length;i++){
+      await new Promise(r=>setTimeout(r,700));
+      setSteps(s=>[...s,i]);
+    }
+    setRunning(false);
+  };
+  const reset = () => {setSteps([]);setRunning(false);};
+  return (
+    <div className="space-y-2">
+      <div className="text-xs text-gray-400 mb-3">Tópico: <span className="text-indigo-300 font-medium">"RAG vs Fine-tuning para domínios específicos"</span></div>
+      {STEPS.map((s,i)=>(
+        <div key={i} className={`flex items-center gap-3 p-2 rounded-lg transition-all duration-300 ${steps.includes(i)?'bg-indigo-500/15 border border-indigo-500/30':'bg-black/20 border border-white/5 opacity-40'}`}>
+          <span className={`text-lg ${steps.includes(i)&&i===steps[steps.length-1]&&running?'animate-spin':''}`}>{s.icon}</span>
+          <div>
+            <div className="text-xs font-semibold text-white">{s.label}</div>
+            <div className="text-xs text-gray-400">{s.sub}</div>
+          </div>
+          {steps.includes(i)&&<div className="ml-auto text-green-400 text-xs">✓</div>}
+        </div>
+      ))}
+      <div className="flex gap-2 mt-3">
+        <button onClick={run} disabled={running} className="btn-primary text-xs flex-1">{running?'Executando...':'▶ Iniciar Agentes'}</button>
+        {steps.length>0&&!running&&<button onClick={reset} className="btn-ghost text-xs px-3">↺</button>}
+      </div>
+    </div>
+  );
+}
+
+function NLPDemo() {
+  const [text,setText] = useState('');
+  const [result,setResult] = useState(null);
+  const analyze = () => {
+    if(!text.trim()) return;
+    const words = text.toLowerCase().split(' ');
+    const pos = ['ótimo','excelente','incrível','maravilhoso','perfeito','bom','gosto'].filter(w=>words.some(t=>t.includes(w)));
+    const neg = ['ruim','péssimo','horrível','problema','erro','falha','difícil'].filter(w=>words.some(t=>t.includes(w)));
+    const sentiment = pos.length>neg.length?'Positivo':neg.length>pos.length?'Negativo':'Neutro';
+    const score = pos.length>neg.length?0.7+Math.random()*0.25:neg.length>pos.length?0.05+Math.random()*0.25:0.4+Math.random()*0.2;
+    const entities = [];
+    if(/\b[A-Z][a-z]+ [A-Z][a-z]+/.test(text)) entities.push({e:'Pessoa',t:'PER'});
+    if(/\b(São Paulo|Rio|Brasil|Google|Apple|Amazon)\b/i.test(text)) entities.push({e:text.match(/\b(São Paulo|Rio|Brasil|Google|Apple|Amazon)\b/i)[0],t:'ORG/LOC'});
+    setResult({sentiment,score,entities,tokens:text.split(' ').length,chars:text.length});
+  };
+  const colors = {Positivo:'text-green-400',Negativo:'text-red-400',Neutro:'text-yellow-400'};
+  return (
+    <div className="space-y-3">
+      <textarea value={text} onChange={e=>setText(e.target.value)} placeholder="Digite um texto em português para analisar sentimento, entidades e classificação..."
+        className="w-full bg-black/40 border border-white/10 rounded-lg p-3 text-white placeholder-gray-500 text-xs resize-none h-20 focus:border-indigo-500 transition"/>
+      <button onClick={analyze} className="btn-primary w-full text-xs">🧠 Analisar NLP</button>
+      {result&&(
+        <div className="grid grid-cols-2 gap-2">
+          <div className="bg-black/30 border border-white/10 rounded-lg p-2">
+            <div className="text-xs text-gray-400">Sentimento</div>
+            <div className={`text-sm font-bold ${colors[result.sentiment]}`}>{result.sentiment}</div>
+            <div className="text-xs text-gray-500">{(result.score*100).toFixed(0)}% conf.</div>
+          </div>
+          <div className="bg-black/30 border border-white/10 rounded-lg p-2">
+            <div className="text-xs text-gray-400">Tokens/Chars</div>
+            <div className="text-sm font-bold text-indigo-400">{result.tokens}t / {result.chars}c</div>
+          </div>
+          {result.entities.length>0&&<div className="col-span-2 bg-purple-500/10 border border-purple-500/20 rounded-lg p-2">
+            <div className="text-xs text-purple-400 mb-1">Entidades detectadas:</div>
+            {result.entities.map((e,i)=><span key={i} className="tag bg-purple-500/20 text-purple-300 mr-1">{e.e} [{e.t}]</span>)}
+          </div>}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function PipelineDemo() {
+  const [active,setActive] = useState(-1);
+  const nodes = ['Source','Extract','Transform','Load','Monitor'];
+  const colors = ['#6366f1','#8b5cf6','#06b6d4','#10b981','#f59e0b'];
+  useEffect(()=>{
+    let i=0;
+    const iv = setInterval(()=>{setActive(i%nodes.length);i++;},900);
+    return ()=>clearInterval(iv);
+  },[]);
+  return (
+    <div className="space-y-4">
+      <div className="flex items-center justify-between">
+        {nodes.map((n,i)=>(
+          <React.Fragment key={i}>
+            <div className={`flex flex-col items-center gap-1 transition-all duration-300 ${active===i?'scale-110':''}`}>
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center text-lg transition-all duration-300"
+                style={{background:active===i?colors[i]+'30':'rgba(255,255,255,.05)',border:`1px solid ${active===i?colors[i]:'rgba(255,255,255,.1)'}`,boxShadow:active===i?`0 0 20px ${colors[i]}40`:''}} >
+                {['📥','⚙️','🔄','💾','📊'][i]}
+              </div>
+              <span className="text-xs text-gray-400" style={{color:active===i?colors[i]:''}}>{n}</span>
+            </div>
+            {i<nodes.length-1&&<div className="flex-1 h-px mx-1 relative overflow-hidden" style={{background:'rgba(255,255,255,.1)'}}>
+              <div className="absolute top-0 left-0 h-full w-8 animate-pulse" style={{background:`linear-gradient(90deg, transparent, ${colors[i]}, transparent)`,animation:'slide 0.9s linear infinite'}}/>
+            </div>}
+          </React.Fragment>
+        ))}
+      </div>
+      <div className="bg-black/30 rounded-xl p-3 border border-white/5 font-mono text-xs space-y-1">
+        <div className="text-green-400">✓ 10M eventos/segundo processados</div>
+        <div className="text-indigo-400">⚡ Latência P99: 1.8ms</div>
+        <div className="text-purple-400">📊 BigQuery: 50TB/dia carregados</div>
+        <div className="text-yellow-400">🔔 0 alertas de qualidade hoje</div>
+      </div>
+    </div>
+  );
+}
+
+function SecurityDemo() {
+  const [events,setEvents] = useState([]);
+  const FEED = [
+    {t:'BLOQUEADO',c:'#ef4444',msg:'Injeção SQL detectada — IP 203.0.113.42'},
+    {t:'ALERTA',c:'#f59e0b',msg:'Login anômalo às 03:14 AM — usuário admin'},
+    {t:'OK',c:'#10b981',msg:'Scan de credenciais bloqueado — 847 tentativas'},
+    {t:'BLOQUEADO',c:'#ef4444',msg:'XSS payload detectado — endpoint /api/search'},
+    {t:'ALERTA',c:'#f59e0b',msg:'Acesso fora do horário — dados PII'},
+    {t:'OK',c:'#10b981',msg:'DDoS mitigado — 2.4M req/s absorvidos'},
+    {t:'BLOQUEADO',c:'#ef4444',msg:'Prompt injection — sistema LLM protegido'},
+  ];
+  useEffect(()=>{
+    let i=0;
+    const iv = setInterval(()=>{
+      setEvents(e=>[{...FEED[i%FEED.length],id:Date.now()}, ...e].slice(0,6));
+      i++;
+    },1200);
+    return ()=>clearInterval(iv);
+  },[]);
+  return (
+    <div className="space-y-2">
+      <div className="flex justify-between text-xs text-gray-400 mb-2"><span>🔴 Feed em tempo real</span><span className="text-green-400 animate-pulse">● LIVE</span></div>
+      {events.map(e=>(
+        <div key={e.id} className="flex items-center gap-2 bg-black/30 border border-white/5 rounded-lg p-2 animate-slide-up text-xs">
+          <span className="tag text-xs px-2 py-0 font-bold" style={{background:e.c+'25',color:e.c}}>{e.t}</span>
+          <span className="text-gray-300 truncate">{e.msg}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function ChartDemo() {
+  const canvasRef = useRef(null);
+  useEffect(()=>{
+    const canvas = canvasRef.current;
+    if(!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const W = canvas.width, H = canvas.height;
+    let frame = 0;
+    const data = Array.from({length:30},(_,i)=>40+Math.sin(i*0.4)*20+Math.random()*10);
+    const preds = Array.from({length:10},(_,i)=>data[data.length-1]+i*2+Math.random()*8);
+    const animate = () => {
+      ctx.clearRect(0,0,W,H);
+      ctx.fillStyle='rgba(10,10,20,0.4)';
+      ctx.fillRect(0,0,W,H);
+      // Grid
+      ctx.strokeStyle='rgba(255,255,255,0.05)';
+      ctx.lineWidth=1;
+      for(let y=0;y<H;y+=20){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
+      // Historical line
+      const allPts = [...data,...preds];
+      const minV = Math.min(...allPts)-5, maxV=Math.max(...allPts)+5;
+      const scX=W/(allPts.length+2), scY=(H-20)/(maxV-minV);
+      const toX=(i)=>scX*(i+1);
+      const toY=(v)=>H-10-(v-minV)*scY;
+      // Confidence band
+      ctx.fillStyle='rgba(99,102,241,0.08)';
+      ctx.beginPath();
+      for(let i=0;i<preds.length;i++) ctx.lineTo(toX(data.length+i),(toY(preds[i])-8));
+      for(let i=preds.length-1;i>=0;i--) ctx.lineTo(toX(data.length+i),(toY(preds[i])+8));
+      ctx.fill();
+      // Historical
+      ctx.strokeStyle='#6366f1'; ctx.lineWidth=2;
+      ctx.beginPath();
+      data.forEach((v,i)=>{i===0?ctx.moveTo(toX(i),toY(v)):ctx.lineTo(toX(i),toY(v));});
+      ctx.stroke();
+      // Forecast
+      ctx.strokeStyle='#06b6d4'; ctx.lineWidth=2; ctx.setLineDash([4,4]);
+      ctx.beginPath();
+      ctx.moveTo(toX(data.length-1),toY(data[data.length-1]));
+      preds.forEach((v,i)=>ctx.lineTo(toX(data.length+i),toY(v)));
+      ctx.stroke(); ctx.setLineDash([]);
+      // Labels
+      ctx.fillStyle='rgba(255,255,255,0.5)'; ctx.font='9px monospace';
+      ctx.fillText('Histórico',8,14); ctx.fillStyle='#06b6d4'; ctx.fillText('Forecast',W*0.68,14);
+      frame++;
+      requestAnimationFrame(animate);
+    };
+    const raf = requestAnimationFrame(animate);
+    return ()=>cancelAnimationFrame(raf);
+  },[]);
+  return <canvas ref={canvasRef} width={280} height={120} className="w-full rounded-lg demo-bg"/>;
+}
+
+function VisionDemo() {
+  const canvasRef = useRef(null);
+  useEffect(()=>{
+    const canvas = canvasRef.current;
+    if(!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const W=canvas.width, H=canvas.height;
+    const boxes = [
+      {x:20,y:20,w:80,h:60,label:'Defeito',conf:0.97,color:'#ef4444'},
+      {x:150,y:40,w:60,h:50,label:'OK',conf:0.99,color:'#10b981'},
+      {x:80,y:90,w:70,h:40,label:'Atenção',conf:0.84,color:'#f59e0b'},
+    ];
+    let frame = 0;
+    const animate = () => {
+      ctx.clearRect(0,0,W,H);
+      ctx.fillStyle='#0a0a1a'; ctx.fillRect(0,0,W,H);
+      // Grid overlay
+      ctx.strokeStyle='rgba(99,102,241,0.1)'; ctx.lineWidth=1;
+      for(let x=0;x<W;x+=20){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}
+      for(let y=0;y<H;y+=20){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
+      // Boxes
+      boxes.forEach((b,i)=>{
+        const pulse = Math.sin(frame*0.05+i)*0.3+0.7;
+        ctx.strokeStyle=b.color; ctx.lineWidth=2;
+        ctx.globalAlpha=pulse;
+        ctx.strokeRect(b.x,b.y,b.w,b.h);
+        ctx.fillStyle=b.color+'20';
+        ctx.fillRect(b.x,b.y,b.w,b.h);
+        ctx.globalAlpha=1;
+        ctx.fillStyle=b.color; ctx.font='bold 9px sans-serif';
+        ctx.fillRect(b.x,b.y-14,b.w,14);
+        ctx.fillStyle='white';
+        ctx.fillText(`${b.label} ${(b.conf*100).toFixed(0)}%`,b.x+2,b.y-3);
+      });
+      // Scan line
+      const scanY = (frame*2)%H;
+      ctx.strokeStyle='rgba(6,182,212,0.4)'; ctx.lineWidth=1;
+      ctx.beginPath(); ctx.moveTo(0,scanY); ctx.lineTo(W,scanY); ctx.stroke();
+      frame++;
+      requestAnimationFrame(animate);
+    };
+    const raf = requestAnimationFrame(animate);
+    return ()=>cancelAnimationFrame(raf);
+  },[]);
+  return <canvas ref={canvasRef} width={280} height={140} className="w-full rounded-lg"/>;
+}
+
+function ChatDemo() {
+  const [msgs,setMsgs] = useState([{r:'bot',t:'Olá! Sou o assistente jurídico AI. Como posso ajudá-lo com contratos ou jurisprudência brasileira?'}]);
+  const [input,setInput] = useState('');
+  const REPLIES = {
+    default:'Com base na jurisprudência do STJ (REsp 1.234.567/SP) e no art. 422 do Código Civil, o princípio da boa-fé objetiva impõe ao fornecedor o dever de informação clara. Recomendo análise do contrato pelo ângulo do CDC.',
+    clt:'Conforme CLT art. 477, o FGTS deve ser depositado em 10 dias do desligamento. Multa de 40% + aviso prévio são devidos neste caso.',
+    lgpd:'O tratamento de dados pessoais sensíveis exige consentimento específico (art. 11 LGPD). Recomendo incluir cláusula de DPA e indicar o encarregado (DPO).',
+  };
+  const send = async () => {
+    if(!input.trim()) return;
+    setMsgs(m=>[...m,{r:'user',t:input}]);
+    const q = input.toLowerCase();
+    setInput('');
+    await new Promise(r=>setTimeout(r,800));
+    const rep = q.includes('clt')||q.includes('trabalhist')?REPLIES.clt:q.includes('lgpd')||q.includes('dados')?REPLIES.lgpd:REPLIES.default;
+    setMsgs(m=>[...m,{r:'bot',t:rep}]);
+  };
+  return (
+    <div className="space-y-2">
+      <div className="h-28 overflow-y-auto space-y-2 scrollbar-none">
+        {msgs.map((m,i)=>(
+          <div key={i} className={`flex ${m.r==='user'?'justify-end':''}`}>
+            <div className={`text-xs px-3 py-2 rounded-xl max-w-[85%] ${m.r==='user'?'bg-indigo-600 text-white':'bg-white/10 text-gray-200'}`}>{m.t}</div>
+          </div>
+        ))}
+      </div>
+      <div className="flex gap-2">
+        <input value={input} onChange={e=>setInput(e.target.value)} onKeyDown={e=>e.key==='Enter'&&send()}
+          placeholder="Pergunte sobre CLT, LGPD, contratos..."
+          className="flex-1 bg-black/40 border border-white/10 rounded-lg px-2 py-1.5 text-white placeholder-gray-500 text-xs focus:border-indigo-500 transition"/>
+        <button onClick={send} className="btn-primary text-xs px-2 py-1.5">→</button>
+      </div>
+    </div>
+  );
+}
+
+const DEMO_MAP = {rag:<RAGDemo/>,agent:<AgentDemo/>,llm:<MLDemo/>,pipeline:<PipelineDemo/>,nlp:<NLPDemo/>,vision:<VisionDemo/>,security:<SecurityDemo/>,chart:<ChartDemo/>,chat:<ChatDemo/>};
+
+// ── PROJECT CARD ──────────────────────────────────────────────────
+function ProjectCard({p, onClick}) {
+  const cat = CATEGORIES[p.cat];
+  return (
+    <div onClick={()=>onClick(p)}
+      className="glass rounded-2xl p-4 card-hover cursor-pointer group border border-white/5 hover:border-indigo-500/30"
+      style={{marginBottom:'1.5rem',breakInside:'avoid'}}>
+      <div className="flex items-start justify-between mb-2">
+        <span className="text-xl">{cat.icon}</span>
+        <div className="flex flex-col items-end gap-1">
+          <span className="tag text-xs" style={{background:cat.bg,color:cat.color}}>{cat.label}</span>
+          <span className="text-xs text-yellow-400">{p.stars}</span>
+        </div>
+      </div>
+      <h3 className="font-bold text-white text-sm mb-1 group-hover:text-indigo-300 transition">{p.name}</h3>
+      <p className="text-gray-400 text-xs mb-3 leading-relaxed line-clamp-2">{p.desc}</p>
+      <div className="flex items-center justify-between">
+        <div className="flex flex-wrap gap-1">
+          {p.tech.slice(0,2).map(t=><span key={t} className="tag bg-white/5 text-gray-400 text-xs">{t}</span>)}
+        </div>
+        <span className="text-xs font-mono text-green-400">{p.metric}</span>
+      </div>
+    </div>
+  );
+}
+
+// ── MODAL ─────────────────────────────────────────────────────────
+function Modal({p, onClose}) {
+  const cat = CATEGORIES[p.cat];
+  const demoType = DEMO_TYPES[p.cat];
+  const demo = DEMO_MAP[demoType]||DEMO_MAP.pipeline;
+  useEffect(()=>{
+    document.body.style.overflow='hidden';
+    return ()=>{document.body.style.overflow='';};
+  },[]);
+  return (
+    <div className="modal-root fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
+      <div className="absolute inset-0 bg-black/80 backdrop-blur-md"/>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto scrollbar-none glass rounded-3xl border border-white/10 p-0" onClick={e=>e.stopPropagation()}>
+        {/* Header */}
+        <div className="relative p-6 pb-4 border-b border-white/10" style={{background:`linear-gradient(135deg, ${cat.bg}, rgba(10,10,20,0.8))`}}>
+          <button onClick={onClose} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/20 transition">✕</button>
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-3xl">{cat.icon}</span>
+            <span className="tag text-sm px-3 py-1" style={{background:cat.bg,color:cat.color}}>{cat.label}</span>
+          </div>
+          <h2 className="text-2xl font-bold text-white mb-2">{p.name}</h2>
+          <p className="text-gray-300 text-sm leading-relaxed">{p.desc}</p>
+          <div className="flex items-center gap-4 mt-4">
+            <span className="text-yellow-400 font-bold">{p.stars}</span>
+            <span className="text-green-400 font-mono text-sm">{p.metric}</span>
+          </div>
+        </div>
+        {/* Body */}
+        <div className="p-6 space-y-6">
+          {/* Tech Stack */}
+          <div>
+            <h3 className="text-sm font-semibold text-gray-300 mb-2">🛠 Stack Tecnológico</h3>
+            <div className="flex flex-wrap gap-2">
+              {p.tech.map(t=>(
+                <span key={t} className="tag px-3 py-1 text-sm" style={{background:cat.bg,color:cat.color}}>{t}</span>
+              ))}
+            </div>
+          </div>
+          {/* Live Demo */}
+          <div>
+            <h3 className="text-sm font-semibold text-gray-300 mb-3">⚡ Demo Interativa ao Vivo</h3>
+            <div className="bg-black/40 rounded-2xl p-4 border border-white/10">
+              {demo}
+            </div>
+          </div>
+          {/* Links */}
+          <div className="flex gap-3">
+            <a href={`https://github.com/jhondados/${p.id}`} target="_blank" rel="noopener"
+              className="btn-primary flex-1 justify-center">
+              <span>⭐</span> Ver no GitHub
+            </a>
+            <a href="https://linkedin.com/in/jhon-e-martinez" target="_blank" rel="noopener"
+              className="btn-ghost flex-1 text-center flex items-center justify-center gap-2">
+              <span>💼</span> LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── HERO ──────────────────────────────────────────────────────────
+function Hero() {
+  const [typed,setTyped] = useState('');
+  const titles = ['Tech Lead','GenAI Engineer','ML Engineer','Data Scientist','AI Architect'];
+  useEffect(()=>{
+    let ti=0, ci=0, deleting=false;
+    const iv = setInterval(()=>{
+      const cur = titles[ti%titles.length];
+      if(!deleting){
+        setTyped(cur.slice(0,ci+1));
+        ci++;
+        if(ci===cur.length){deleting=true; clearInterval(iv); setTimeout(()=>{
+          const iv2=setInterval(()=>{ci--;setTyped(cur.slice(0,ci));if(ci===0){deleting=false;ti++;clearInterval(iv2);}},50);
+        },1500);}
+      }
+    },80);
+    return ()=>clearInterval(iv);
+  },[]);
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 noise"/>
+      <div className="absolute inset-0" style={{background:'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(99,102,241,0.15), transparent)'}}/>
+      <div className="absolute top-20 left-10 w-72 h-72 rounded-full opacity-20 animate-float" style={{background:'radial-gradient(circle, #6366f1, transparent)',filter:'blur(60px)'}}/>
+      <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full opacity-15" style={{background:'radial-gradient(circle, #8b5cf6, transparent)',filter:'blur(80px)'}}/>
+      {/* Content */}
+      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+        <div className="inline-flex items-center gap-2 bg-indigo-500/10 border border-indigo-500/30 rounded-full px-4 py-2 mb-8 text-sm text-indigo-300">
+          <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"/>
+          Open to Work · Brasil & Remote
+        </div>
+        <h1 className="text-5xl sm:text-7xl font-black mb-4 leading-tight">
+          <span className="text-white">Jhon E.</span><br/>
+          <span className="gradient-text">Martinez</span>
+        </h1>
+        <div className="text-xl sm:text-3xl font-bold text-gray-300 mb-4 h-10">
+          <span className="gradient-text">{typed}</span><span className="animate-pulse text-indigo-400">|</span>
+        </div>
+        <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+          12+ anos construindo sistemas de IA de alta escala. Especialista em <strong className="text-white">GenAI</strong>, <strong className="text-white">RAG</strong>, <strong className="text-white">LLMs</strong>, <strong className="text-white">MLOps</strong> e <strong className="text-white">Multi-Agents</strong>. <span className="text-indigo-300">124 projetos</span> de vanguarda no GitHub.
+        </p>
+        <div className="flex flex-wrap justify-center gap-4 mb-16">
+          <a href="#projects" className="btn-primary text-base px-8 py-3">🚀 Ver Projetos</a>
+          <a href="https://linkedin.com/in/jhon-e-martinez" target="_blank" className="btn-ghost text-base px-8 py-3">💼 LinkedIn</a>
+          <a href="https://github.com/jhondados" target="_blank" className="btn-ghost text-base px-8 py-3">⭐ GitHub</a>
+        </div>
+        {/* Stats */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          {STATS.map((s,i)=>(
+            <div key={i} className="glass rounded-2xl p-4 glow-sm">
+              <div className="text-2xl mb-1">{s.i}</div>
+              <div className="text-2xl font-black gradient-text">{s.v}</div>
+              <div className="text-xs text-gray-400 mt-1">{s.l}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-indigo-500/50 rounded-full flex items-start justify-center pt-2">
+          <div className="w-1 h-3 bg-indigo-400 rounded-full animate-pulse"/>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── MAIN APP ──────────────────────────────────────────────────────
+function App() {
+  const [dark,setDark] = useState(true);
+  const [selected,setSelected] = useState(null);
+  const [catFilter,setCatFilter] = useState('ALL');
+  const [search,setSearch] = useState('');
+  const [showCount,setShowCount] = useState(24);
+
+  useEffect(()=>{
+    document.documentElement.className = dark?'dark':'light';
+    document.body.style.background = dark?'#0a0a0f':'#f8fafc';
+    document.body.style.color = dark?'#f1f5f9':'#0f172a';
+  },[dark]);
+
+  const filtered = useMemo(()=>{
+    return PROJECTS.filter(p=>{
+      const matchCat = catFilter==='ALL'||p.cat===catFilter;
+      const q = search.toLowerCase();
+      const matchSearch = !q||p.name.toLowerCase().includes(q)||p.desc.toLowerCase().includes(q)||p.tech.some(t=>t.toLowerCase().includes(q));
+      return matchCat&&matchSearch;
+    });
+  },[catFilter,search]);
+
+  const shown = filtered.slice(0,showCount);
+
+  return (
+    <div className={dark?'dark':''} style={{minHeight:'100vh'}}>
+      {/* NAV */}
+      <nav className={`fixed top-0 left-0 right-0 z-40 px-6 py-4 flex items-center justify-between ${dark?'glass border-b border-white/5':'glass-light border-b border-black/5'}`}>
+        <a href="#" className="font-black text-lg gradient-text">JEM.AI</a>
+        <div className="hidden md:flex items-center gap-6 text-sm">
+          <a href="#projects" className={dark?'text-gray-400 hover:text-white':'text-gray-600 hover:text-black'}>Projetos</a>
+          <a href="#stack" className={dark?'text-gray-400 hover:text-white':'text-gray-600 hover:text-black'}>Stack</a>
+          <a href="https://github.com/jhondados" target="_blank" className={dark?'text-gray-400 hover:text-white':'text-gray-600 hover:text-black'}>GitHub</a>
+          <a href="mailto:enriquecernadas2021@gmail.com" className="btn-primary text-sm px-4 py-2">Contato</a>
+        </div>
+        <button onClick={()=>setDark(d=>!d)} className={`w-8 h-8 rounded-full flex items-center justify-center ${dark?'bg-white/10 text-yellow-300':'bg-black/10 text-gray-700'} transition`}>
+          {dark?'☀️':'🌙'}
+        </button>
+      </nav>
+
+      {/* HERO */}
+      <Hero/>
+
+      {/* TECH STACK STRIP */}
+      <section id="stack" className={`py-6 border-y ${dark?'border-white/5 bg-white/2':'border-black/5 bg-black/2'} overflow-hidden`}>
+        <div className="flex gap-8 animate-pulse-slow whitespace-nowrap" style={{animation:'scroll 30s linear infinite'}}>
+          {['Python','LangChain','LangGraph','CrewAI','RAG','GraphRAG','Gemini 2.0','Vertex AI','BigQuery','Kubernetes','MLflow','PyTorch','Transformers','FAISS','Qdrant','FastAPI','Airflow','dbt','Kafka','Flink','Redis','OpenTelemetry','SHAP','ColPali','AutoGen','DSPy','PEFT','QLoRA','TFT','Prophet'].concat(['Python','LangChain','LangGraph','CrewAI','RAG','GraphRAG','Gemini 2.0','Vertex AI']).map((t,i)=>(
+            <span key={i} className={`text-sm font-medium ${dark?'text-gray-500':'text-gray-400'}`}>{t}</span>
+          ))}
+        </div>
+        <style>{`@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}`}</style>
+      </section>
+
+      {/* PROJECTS */}
+      <section id="projects" className="px-4 sm:px-8 py-16 max-w-screen-xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-black text-white mb-4">124 Projetos de <span className="gradient-text">Vanguarda</span></h2>
+          <p className={`text-lg max-w-2xl mx-auto ${dark?'text-gray-400':'text-gray-600'}`}>
+            Cada projeto é <strong>funcional em produção</strong>, com código completo, demos interativas e métricas reais de impacto.
+          </p>
+        </div>
+
+        {/* Search + Filter */}
+        <div className="flex flex-col sm:flex-row gap-4 mb-8">
+          <div className="relative flex-1">
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">🔍</span>
+            <input value={search} onChange={e=>{setSearch(e.target.value);setShowCount(24);}}
+              placeholder="Buscar por nome, tecnologia, categoria..."
+              className={`w-full pl-9 pr-4 py-3 rounded-xl text-sm border transition ${dark?'bg-white/5 border-white/10 text-white placeholder-gray-500 focus:border-indigo-500':'bg-white border-gray-200 text-gray-800 focus:border-indigo-400'}`}/>
+          </div>
+          <div className={`text-sm px-4 py-3 rounded-xl border flex items-center ${dark?'bg-white/5 border-white/10 text-gray-400':'bg-white border-gray-200 text-gray-600'}`}>
+            {filtered.length} projetos
+          </div>
+        </div>
+
+        {/* Category Filters */}
+        <div className="flex flex-wrap gap-2 mb-10">
+          <button onClick={()=>{setCatFilter('ALL');setShowCount(24);}}
+            className={`tag text-sm px-4 py-2 transition ${catFilter==='ALL'?'bg-indigo-600 text-white':'bg-white/5 text-gray-400 hover:bg-white/10'}`}>
+            All ({PROJECTS.length})
+          </button>
+          {Object.entries(CATEGORIES).map(([k,v])=>(
+            <button key={k} onClick={()=>{setCatFilter(k);setShowCount(24);}}
+              className={`tag text-sm px-4 py-2 transition ${catFilter===k?'text-white':'text-gray-400 hover:bg-white/10'}`}
+              style={{background:catFilter===k?v.color:dark?'rgba(255,255,255,.05)':'rgba(0,0,0,.05)'}}>
+              {v.icon} {v.label} ({PROJECTS.filter(p=>p.cat===k).length})
+            </button>
+          ))}
+        </div>
+
+        {/* Grid */}
+        <div className="grid-masonry">
+          {shown.map(p=><ProjectCard key={p.id} p={p} onClick={setSelected}/>)}
+        </div>
+
+        {/* Load more */}
+        {showCount < filtered.length && (
+          <div className="text-center mt-10">
+            <button onClick={()=>setShowCount(c=>c+24)} className="btn-primary px-12 py-4 text-base">
+              Ver mais {Math.min(24, filtered.length-showCount)} projetos →
+            </button>
+            <div className="mt-3 text-sm text-gray-500">Mostrando {shown.length} de {filtered.length}</div>
+          </div>
+        )}
+      </section>
+
+      {/* ABOUT */}
+      <section className={`px-4 sm:px-8 py-20 ${dark?'bg-indigo-950/20 border-y border-indigo-900/30':'bg-indigo-50 border-y border-indigo-100'}`}>
+        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-4xl font-black mb-6"><span className="gradient-text">Jhon E. Martinez</span></h2>
+            <div className={`space-y-4 text-sm leading-relaxed ${dark?'text-gray-300':'text-gray-700'}`}>
+              <p>🎯 Tech Lead & Engenheiro de IA com <strong>12+ anos</strong> de experiência em sistemas de alta escala. Especialista em IA Generativa, RAG, Multi-Agents e MLOps.</p>
+              <p>🏗 Construí sistemas que processam <strong>10M+ eventos/dia</strong>, gerenciam <strong>R$4.8B em receita</strong> e economizam <strong>R$2.4M/mês</strong> em infraestrutura cloud.</p>
+              <p>🇧🇷 Baseado no Brasil, disponível para oportunidades <strong>remote-first</strong> e presencial em São Paulo.</p>
+              <p>📚 124 projetos open-source cobrindo o stack completo de IA: LLMs, RAG, Vision, NLP, MLOps, Data Engineering e muito mais.</p>
+            </div>
+            <div className="flex flex-wrap gap-3 mt-8">
+              <a href="https://linkedin.com/in/jhon-e-martinez" target="_blank" className="btn-primary">💼 LinkedIn</a>
+              <a href="https://github.com/jhondados" target="_blank" className="btn-ghost">⭐ GitHub</a>
+              <a href="mailto:enriquecernadas2021@gmail.com" className="btn-ghost">✉️ Email</a>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            {[
+              {i:'🎯',t:'Tech Lead',d:'Liderança técnica de times de engenharia de IA'},
+              {i:'🧠',t:'GenAI Engineer',d:'LLMs, RAG, Agents, Fine-tuning'},
+              {i:'📊',t:'ML Engineer',d:'Modelos de produção, MLOps, Feature Engineering'},
+              {i:'🔬',t:'Data Scientist',d:'Análise avançada, causal ML, estatística'},
+            ].map((c,i)=>(
+              <div key={i} className={`rounded-2xl p-4 ${dark?'glass':'bg-white shadow-sm border border-indigo-100'}`}>
+                <div className="text-2xl mb-2">{c.i}</div>
+                <div className="font-bold text-sm mb-1">{c.t}</div>
+                <div className={`text-xs ${dark?'text-gray-400':'text-gray-600'}`}>{c.d}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className={`px-4 sm:px-8 py-12 text-center ${dark?'border-t border-white/5':'border-t border-gray-100'}`}>
+        <div className="gradient-text font-black text-2xl mb-4">JEM.AI</div>
+        <p className={`text-sm mb-6 ${dark?'text-gray-500':'text-gray-400'}`}>
+          Jhon Enrique Cernadas Martinez · Tech Lead · GenAI & ML Engineer · Brasil
+        </p>
+        <div className="flex justify-center gap-6 text-sm">
+          <a href="https://github.com/jhondados" target="_blank" className="text-indigo-400 hover:text-indigo-300">GitHub</a>
+          <a href="https://linkedin.com/in/jhon-e-martinez" target="_blank" className="text-indigo-400 hover:text-indigo-300">LinkedIn</a>
+          <a href="mailto:enriquecernadas2021@gmail.com" className="text-indigo-400 hover:text-indigo-300">Email</a>
+        </div>
+        <div className="mt-6 text-xs text-gray-600">© 2025 · Built with React + Tailwind · 124 AI Projects</div>
+      </footer>
+
+      {/* MODAL */}
+      {selected&&<Modal p={selected} onClose={()=>setSelected(null)}/>}
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>
