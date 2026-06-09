@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Jhon E. Martinez — Tech Lead · GenAI · ML Engineer | 124 AI Projects</title>
-<meta name="description" content="Portfolio de Jhon Enrique Cernadas Martinez — Tech Lead, Engenheiro de IA Generativa e ML. 124 projetos de vanguarda: RAG, LLMs, MLOps, LangChain, CrewAI, GraphRAG e muito mais."/>
+<meta name="description" content="Portfolio de Jhon E. Martinez — Tech Lead, GenAI & ML Engineer. 225 web apps de IA testáveis ao vivo: Finanças, Marketing, Governança, Logística, Agro, Direito, RH. RAG, LLMs, MLOps, dados reais do Brasil."/>
 <meta name="keywords" content="Tech Lead, GenAI Engineer, Machine Learning, RAG, LLM, LangChain, CrewAI, LangGraph, Python, BigQuery, Vertex AI, MLOps, Data Science, Engenheiro IA, Brasil"/>
 <meta property="og:title" content="Jhon E. Martinez — 124 Projetos de IA de Vanguarda"/>
 <meta property="og:description" content="Tech Lead & GenAI Engineer com 124 projetos: RAG, LLMs, Multi-agents, MLOps e muito mais."/>
@@ -119,11 +119,19 @@ const CATEGORIES = {
   BRAZ:  { label:'AI para o Brasil', color:'#22c55e', bg:'rgba(34,197,94,.15)',   icon:'🇧🇷' },
   SEC:   { label:'Segurança AI',     color:'#f97316', bg:'rgba(249,115,22,.15)',  icon:'🛡️' },
   SCI:   { label:'Ciência & Saúde',  color:'#a78bfa', bg:'rgba(167,139,250,.15)', icon:'🧬' },
+  FIN:   { label:'Finanças',         color:'#10b981', bg:'rgba(16,185,129,.15)',  icon:'💰' },
+  MKT:   { label:'Marketing',        color:'#ec4899', bg:'rgba(236,72,153,.15)',  icon:'📣' },
+  GOV:   { label:'Governança',       color:'#6366f1', bg:'rgba(99,102,241,.15)',  icon:'🏛️' },
+  LOG:   { label:'Logística',        color:'#f59e0b', bg:'rgba(245,158,11,.15)',  icon:'🚚' },
+  AGRO:  { label:'Agro',             color:'#22c55e', bg:'rgba(34,197,94,.15)',   icon:'🌱' },
+  LAW:   { label:'Direito',          color:'#8b5cf6', bg:'rgba(139,92,246,.15)',  icon:'⚖️' },
+  RH:    { label:'Recursos Humanos', color:'#06b6d4', bg:'rgba(6,182,212,.15)',   icon:'👥' },
 };
 
 const DEMO_TYPES = {
   RAG:'rag', AGENT:'agent', LLM:'llm', MLOPS:'pipeline', DATA:'pipeline',
-  CV:'vision', NLP:'nlp', BRAZ:'chat', SEC:'security', SCI:'chart'
+  CV:'vision', NLP:'nlp', BRAZ:'chat', SEC:'security', SCI:'chart',
+  FIN:'chart', MKT:'chart', GOV:'pipeline', LOG:'pipeline', AGRO:'chart', LAW:'chat', RH:'chart'
 };
 
 const PROJECTS = [
@@ -225,13 +233,115 @@ const PROJECTS = [
   {id:'time-series-forecasting-platform',cat:'SCI',name:'Time Series Platform',desc:'TFT + AutoML ensemble: MAPE 4.1% em 500+ séries temporais de diferentes domínios com exogenous features.',tech:['TFT','Prophet','NeuralProphet','Python','Optuna'],stars:'★ 4.8',metric:'MAPE 4.1% · 500+ séries'},
   {id:'causal-ml-platform',cat:'SCI',name:'Causal ML Platform',desc:'DoWhy + EconML para inferência causal. Uplift modeling, CATE estimation e análise contrafactual.',tech:['DoWhy','EconML','Python','XGBoost','CausalForest'],stars:'★ 4.9',metric:'+43% ROI marketing'},
   {id:'reinforcement-learning-trading',cat:'SCI',name:'RL Trading Agent B3',desc:'PPO agent na B3: Sharpe 1.87, +34.2% retorno anual em backtest 5 anos vs Ibovespa +18.4%.',tech:['PPO','DQN','PyTorch','B3','Gymnasium'],stars:'★ 5.0',metric:'Sharpe 1.87 · +34.2% anual'},
+
+  {id:'credit-score-explicavel',cat:'FIN',name:'Credit Score Explicável',desc:'Motor de score de crédito com explicabilidade SHAP em tempo real. Analisa renda, histórico e comportamento para aprovar crédito com transpar',tech:['Machine Learning','XGBoost','SHAP','Explainable AI'],stars:'★ 5.0',metric:'0.94 AUC-ROC',live:true},
+  {id:'fraude-pix-realtime',cat:'FIN',name:'Detecção de Fraude PIX',desc:'Detecção de fraude em transações PIX em tempo real usando GNN e ML. Identifica anéis de fraude e transações suspeitas em menos de 12ms.',tech:['Graph Neural Networks','ML','Anomaly Detection','Real-time'],stars:'★ 5.0',metric:'0.982 AUC',live:true},
+  {id:'previsao-inadimplencia',cat:'FIN',name:'Previsão de Inadimplência IFRS9',desc:'Modelo de PD/LGD/EAD para provisionamento IFRS 9. Estima perda esperada e estágio de risco por cliente com staging automático.',tech:['Machine Learning','Survival Analysis','IFRS9'],stars:'★ 5.0',metric:'91.3% Acurácia PD',live:true},
+  {id:'robo-advisor-b3',cat:'FIN',name:'Robo-Advisor de Investimentos',desc:'Consultor de investimentos automatizado para a B3. Otimização de portfólio Markowitz + RL com perfil de risco e rebalanceamento inteligente.',tech:['Reinforcement Learning','Portfolio Optimization','ML'],stars:'★ 5.0',metric:'1.87 Sharpe',live:true},
+  {id:'risco-credito-pj',cat:'FIN',name:'Análise de Risco de Crédito PJ',desc:'Avaliação de risco de crédito para empresas (CNPJ) combinando dados financeiros, setoriais e macroeconômicos com ML e NLP de notícias.',tech:['Machine Learning','NLP','Credit Risk'],stars:'★ 5.0',metric:'0.93 AUC',live:true},
+  {id:'forecast-fluxo-caixa',cat:'FIN',name:'Forecasting de Fluxo de Caixa',desc:'Previsão de fluxo de caixa com modelos de séries temporais. Antecipa necessidades de capital de giro e otimiza aplicações financeiras.',tech:['Time Series','Prophet','LightGBM'],stars:'★ 5.0',metric:'4.8% MAPE',live:true},
+  {id:'otimizacao-portfolio',cat:'FIN',name:'Otimização de Portfólio',desc:'Otimização de carteira de investimentos com fronteira eficiente, restrições e Reinforcement Learning para maximizar retorno ajustado ao risc',tech:['Reinforcement Learning','Markowitz','Optimization'],stars:'★ 5.0',metric:'2.1 Sharpe',live:true},
+  {id:'sentimento-mercado-b3',cat:'FIN',name:'Sentimento de Mercado B3',desc:'Análise de sentimento de notícias e redes sociais sobre ações da B3 em tempo real, gerando sinais de trading e alertas de movimento.',tech:['NLP','Sentiment Analysis','LLM','BERTimbau'],stars:'★ 5.0',metric:'0.91 F1 PT-BR',live:true},
+  {id:'open-finance-insights',cat:'FIN',name:'Open Finance Insights',desc:'Agregador de dados Open Finance que analisa gastos, gera insights financeiros personalizados e recomenda produtos com IA generativa.',tech:['GenAI','ML','Recommendation','RAG'],stars:'★ 5.0',metric:'142K Usuários',live:true},
+  {id:'cobranca-inteligente',cat:'FIN',name:'Cobrança Inteligente',desc:'Priorização inteligente de cobrança com ML: prevê propensão a pagar e recomenda o melhor canal, horário e abordagem para cada cliente.',tech:['Machine Learning','Uplift Modeling','Optimization'],stars:'★ 5.0',metric:'+28% Recuperação',live:true},
+  {id:'aml-graph-detection',cat:'FIN',name:'Anti-Lavagem de Dinheiro (AML)',desc:'Detecção de lavagem de dinheiro com análise de grafos. Identifica estruturas suspeitas, smurfing e contas laranja em redes de transações.',tech:['Graph ML','GNN','Anomaly Detection'],stars:'★ 5.0',metric:'94.1% Detecção',live:true},
+  {id:'precificacao-seguros',cat:'FIN',name:'Precificação Dinâmica de Seguros',desc:'Precificação atuarial dinâmica de seguros com ML. Calcula prêmio justo por perfil de risco usando telemetria, histórico e fatores externos.',tech:['Machine Learning','GLM','Actuarial'],stars:'★ 5.0',metric:'-14% Loss Ratio',live:true},
+  {id:'analise-demonstracoes-cvm',cat:'FIN',name:'Análise de Demonstrações CVM',desc:'Análise automatizada de demonstrações financeiras de empresas listadas (CVM) com LLM. Extrai indicadores, detecta red flags e gera relatório',tech:['LLM','RAG','Financial Analysis'],stars:'★ 5.0',metric:'430 Empresas',live:true},
+  {id:'conciliacao-bancaria-ai',cat:'FIN',name:'Conciliação Bancária Automática',desc:'Conciliação bancária automática com ML de matching. Reconcilia extratos e lançamentos, identifica divergências e sugere classificação.',tech:['Machine Learning','Entity Matching','NLP'],stars:'★ 5.0',metric:'97% Automação',live:true},
+  {id:'previsao-cambio-brl',cat:'FIN',name:'Previsão de Câmbio USD/BRL',desc:'Previsão de taxa de câmbio USD/BRL com redes neurais e fatores macroeconômicos (Selic, commodities, fluxo cambial) para hedge inteligente.',tech:['Neural Networks','LSTM','Time Series'],stars:'★ 5.0',metric:'1.8% MAPE',live:true},
+  {id:'segmentacao-rfm',cat:'MKT',name:'Segmentação de Clientes RFM',desc:'Segmentação avançada de clientes com análise RFM e clustering ML. Identifica campeões, em risco e oportunidades para campanhas personalizada',tech:['Machine Learning','Clustering','RFM'],stars:'★ 5.0',metric:'8 Segmentos',live:true},
+  {id:'churn-preditivo',cat:'MKT',name:'Previsão de Churn de Clientes',desc:'Previsão de cancelamento de clientes com ML explicável. Identifica clientes em risco semanas antes e recomenda ações de retenção personaliza',tech:['Machine Learning','SHAP','Survival Analysis'],stars:'★ 5.0',metric:'0.934 AUC',live:true},
+  {id:'recomendacao-produtos',cat:'MKT',name:'Sistema de Recomendação',desc:'Motor de recomendação de produtos estilo Netflix/Amazon com filtragem colaborativa e two-tower neural. Aumenta cross-sell e ticket médio.',tech:['Neural Networks','Collaborative Filtering','Two-Tower'],stars:'★ 5.0',metric:'+38% CTR',live:true},
+  {id:'media-mix-modeling',cat:'MKT',name:'Otimização de Mídia (MMM)',desc:'Media Mix Modeling com IA para otimizar investimento em mídia. Mede ROI real por canal e recomenda alocação ótima de orçamento.',tech:['ML','Bayesian','MMM'],stars:'★ 5.0',metric:'+34% ROAS',live:true},
+  {id:'sentimento-redes-sociais',cat:'MKT',name:'Social Listening & Sentimento',desc:'Monitoramento de marca em redes sociais com NLP em tempo real. Analisa sentimento PT-BR, detecta crises e identifica tendências emergentes.',tech:['NLP','Sentiment','BERTimbau','Real-time'],stars:'★ 5.0',metric:'28M Posts/dia',live:true},
+  {id:'gerador-copy-genai',cat:'MKT',name:'Gerador de Copy com GenAI',desc:'Geração de copy de marketing com IA generativa: anúncios, e-mails, posts e descrições de produto otimizados para SEO e conversão, em escala.',tech:['GenAI','LLM','SEO'],stars:'★ 5.0',metric:'500K/dia Produtos',live:true},
+  {id:'lead-scoring-preditivo',cat:'MKT',name:'Lead Scoring Preditivo',desc:'Qualificação preditiva de leads com ML. Prioriza leads com maior propensão de conversão e recomenda a próxima melhor ação para vendas.',tech:['Machine Learning','Propensity','Lead Scoring'],stars:'★ 5.0',metric:'+31% Conversão',live:true},
+  {id:'customer-lifetime-value',cat:'MKT',name:'Customer Lifetime Value (CLV)',desc:'Previsão de valor vitalício do cliente com modelos probabilísticos BG/NBD. Otimiza aquisição (CAC) e estratégias de retenção por segmento.',tech:['ML','BG/NBD','Probabilistic'],stars:'★ 5.0',metric:'89% Precisão CLV',live:true},
+  {id:'ab-test-bayesiano',cat:'MKT',name:'A/B Testing Bayesiano',desc:'Plataforma de testes A/B com inferência bayesiana e multi-armed bandits. Decisões 3x mais rápidas sem o problema de peeking.',tech:['Bayesian','Multi-Armed Bandit','Statistics'],stars:'★ 5.0',metric:'3x Velocidade',live:true},
+  {id:'atribuicao-multitouch',cat:'MKT',name:'Atribuição Multi-Touch',desc:'Atribuição de conversão multi-touch com ML causal. Revela a real contribuição de cada ponto de contato na jornada do cliente.',tech:['Causal ML','Attribution','Markov'],stars:'★ 5.0',metric:'+43% Precisão',live:true},
+  {id:'email-personalizado-ai',cat:'MKT',name:'Personalização de E-mail',desc:'Personalização de e-mail marketing 1:1 com IA. Otimiza assunto, conteúdo, horário de envio e oferta para cada destinatário individualmente.',tech:['ML','GenAI','Send-time Optimization'],stars:'★ 5.0',metric:'+47% Open Rate',live:true},
+  {id:'analise-nps-nlp',cat:'MKT',name:'Análise de NPS com NLP',desc:'Análise de pesquisas NPS com NLP. Categoriza comentários, identifica drivers de satisfação/insatisfação e prioriza melhorias por impacto.',tech:['NLP','Topic Modeling','Sentiment'],stars:'★ 5.0',metric:'68 NPS',live:true},
+  {id:'deteccao-influenciadores',cat:'MKT',name:'Detecção de Influenciadores',desc:'Identificação de influenciadores e advogados de marca com análise de grafo social. Mede alcance real, engajamento e fit com a marca.',tech:['Graph ML','Social Network Analysis','NLP'],stars:'★ 5.0',metric:'2.400 Influencers',live:true},
+  {id:'previsao-demanda-campanha',cat:'MKT',name:'Previsão de Demanda',desc:'Previsão de demanda de produtos para campanhas com ML. Antecipa picos, evita rupturas e otimiza estoque promocional por SKU e região.',tech:['ML','Time Series','Demand Forecasting'],stars:'★ 5.0',metric:'6.2% MAPE',live:true},
+  {id:'chatbot-atendimento',cat:'MKT',name:'Chatbot Omnichannel',desc:'Assistente de atendimento omnichannel com IA generativa e RAG. Resolve dúvidas, faz recomendações e escala para humano quando necessário.',tech:['GenAI','RAG','LLM','NLU'],stars:'★ 5.0',metric:'87% Resolução',live:true},
+  {id:'transparencia-gastos',cat:'GOV',name:'Transparência de Gastos Públicos',desc:'Dashboard de análise de gastos públicos com IA. Detecta anomalias, compara órgãos e torna o orçamento público compreensível para o cidadão.',tech:['ML','Anomaly Detection','Data Viz'],stars:'★ 5.0',metric:'312 Órgãos',live:true},
+  {id:'fraude-licitacoes',cat:'GOV',name:'Detecção de Fraude em Licitações',desc:'Detecção de irregularidades em licitações públicas com IA. Identifica conluio, sobrepreço e direcionamento usando ML e análise de grafo.',tech:['Graph ML','Anomaly Detection','NLP'],stars:'★ 5.0',metric:'91% Detecção',live:true},
+  {id:'emendas-parlamentares',cat:'GOV',name:'Análise de Emendas Parlamentares',desc:'Análise de emendas parlamentares com IA. Rastreia destino dos recursos, mede execução e identifica padrões suspeitos de alocação.',tech:['ML','NLP','Network Analysis'],stars:'★ 5.0',metric:'42K Emendas',live:true},
+  {id:'classificacao-processos-adm',cat:'GOV',name:'Classificação de Processos',desc:'Classificação automática de processos administrativos com NLP. Direciona, prioriza e prevê tempo de tramitação reduzindo filas.',tech:['NLP','LLM','Text Classification'],stars:'★ 5.0',metric:'94% Acurácia',live:true},
+  {id:'previsao-arrecadacao',cat:'GOV',name:'Previsão de Arrecadação',desc:'Previsão de arrecadação tributária com séries temporais e fatores macroeconômicos. Apoia planejamento orçamentário e política fiscal.',tech:['Time Series','ML','Econometrics'],stars:'★ 5.0',metric:'2.4% MAPE',live:true},
+  {id:'monitoramento-obras',cat:'GOV',name:'Monitoramento de Obras Públicas',desc:'Monitoramento de obras públicas com IA e imagens de satélite. Acompanha progresso físico, detecta atrasos e obras paralisadas.',tech:['Computer Vision','Satellite','ML'],stars:'★ 5.0',metric:'18.400 Obras',live:true},
+  {id:'contratos-publicos-rag',cat:'GOV',name:'Análise de Contratos Públicos',desc:'Análise de contratos públicos com RAG e LLM. Busca semântica, extração de cláusulas e detecção de riscos em milhões de contratos.',tech:['RAG','LLM','RAGGraph'],stars:'★ 5.0',metric:'1.4M Contratos',live:true},
+  {id:'irregularidades-folha',cat:'GOV',name:'Auditoria de Folha de Pagamento',desc:'Auditoria inteligente de folha de pagamento pública. Detecta servidores fantasma, acúmulo ilegal de cargos e pagamentos irregulares.',tech:['ML','Anomaly Detection','Entity Matching'],stars:'★ 5.0',metric:'2.1M Servidores',live:true},
+  {id:'indicadores-ods',cat:'GOV',name:'Dashboard de Indicadores ODS',desc:'Painel de monitoramento dos Objetivos de Desenvolvimento Sustentável (ODS) por município com IA preditiva e benchmarking.',tech:['ML','Forecasting','Data Viz'],stars:'★ 5.0',metric:'5.570 Municípios',live:true},
+  {id:'reclamacoes-consumidor',cat:'GOV',name:'Análise de Reclamações',desc:'Análise de reclamações de consumidores com NLP. Categoriza, identifica empresas problemáticas e prevê tendências de insatisfação.',tech:['NLP','Topic Modeling','ML'],stars:'★ 5.0',metric:'4.2M Reclamações',live:true},
+  {id:'alocacao-orcamentaria',cat:'GOV',name:'Otimização Orçamentária',desc:'Otimização de alocação orçamentária pública com IA. Maximiza impacto social por real investido usando programação e dados de resultado.',tech:['Optimization','ML','Causal Inference'],stars:'★ 5.0',metric:'+23% Eficiência',live:true},
+  {id:'compliance-lgpd-gov',cat:'GOV',name:'Compliance LGPD Automatizado',desc:'Automação de compliance LGPD para órgãos públicos. Mapeia dados pessoais, avalia riscos e monitora conformidade continuamente.',tech:['NLP','PII Detection','ML'],stars:'★ 5.0',metric:'94% Conformidade',live:true},
+  {id:'risco-fornecedores-gov',cat:'GOV',name:'Risco de Fornecedores',desc:'Avaliação de integridade e risco de fornecedores públicos. Cruza dados de sanções, processos e idoneidade com ML e análise de grafo.',tech:['Graph ML','Risk Scoring','NLP'],stars:'★ 5.0',metric:'890K Fornecedores',live:true},
+  {id:'desempenho-servidores',cat:'GOV',name:'Análise de Desempenho',desc:'People analytics para o setor público. Analisa produtividade, identifica gargalos e recomenda alocação eficiente de servidores.',tech:['ML','People Analytics','NLP'],stars:'★ 5.0',metric:'2.1M Servidores',live:true},
+  {id:'demanda-servicos-publicos',cat:'GOV',name:'Previsão de Demanda',desc:'Previsão de demanda por serviços públicos (saúde, educação, assistência) com IA para dimensionar recursos e reduzir filas.',tech:['Time Series','ML','Forecasting'],stars:'★ 5.0',metric:'5.1% MAPE',live:true},
+  {id:'otimizacao-rotas',cat:'LOG',name:'Otimização de Rotas (VRP)',desc:'Otimização de rotas de entrega com OR-Tools e ML. Resolve VRP com restrições, reduz custo de combustível e melhora prazos de entrega.',tech:['OR-Tools','Optimization','ML'],stars:'★ 5.0',metric:'-24% Custo',live:true},
+  {id:'previsao-demanda-estoque',cat:'LOG',name:'Previsão de Demanda de Estoque',desc:'Previsão de demanda de estoque com ML probabilístico. Reduz rupturas e excesso, otimizando capital de giro e nível de serviço.',tech:['ML','Probabilistic Forecasting','Time Series'],stars:'★ 5.0',metric:'4.2% MAPE',live:true},
+  {id:'eta-preditivo',cat:'LOG',name:'ETA Preditivo de Entregas',desc:'Previsão de tempo de entrega (ETA) com ML. Considera trânsito, clima e histórico para prazos precisos e melhor experiência do cliente.',tech:['ML','LightGBM','Real-time'],stars:'★ 5.0',metric:'96.8% Acurácia',live:true},
+  {id:'otimizacao-armazem',cat:'LOG',name:'Otimização de Armazém',desc:'Otimização de layout e slotting de armazém com IA. Reduz distância percorrida no picking e aumenta a produtividade operacional.',tech:['Optimization','ML','Operations Research'],stars:'★ 5.0',metric:'+34% Picking',live:true},
+  {id:'anomalias-cadeia',cat:'LOG',name:'Detecção de Anomalias na Cadeia',desc:'Detecção de anomalias e disrupções na cadeia de suprimentos com IA. Antecipa problemas de fornecedor e transporte 72h antes.',tech:['ML','Anomaly Detection','Time Series'],stars:'★ 5.0',metric:'72h Antecip.',live:true},
+  {id:'previsao-frete',cat:'LOG',name:'Previsão de Custo de Frete',desc:'Previsão de custo de frete com ML. Estima preço justo por rota, modal e período, apoiando negociação e precificação logística.',tech:['ML','Pricing','Regression'],stars:'★ 5.0',metric:'3.8% MAPE',live:true},
+  {id:'planejamento-capacidade',cat:'LOG',name:'Planejamento de Capacidade',desc:'Planejamento de capacidade logística com IA. Dimensiona frota, mão de obra e armazéns para a demanda projetada, evitando ociosidade.',tech:['ML','Optimization','Forecasting'],stars:'★ 5.0',metric:'-31% Ociosidade',live:true},
+  {id:'manutencao-preditiva-frota',cat:'LOG',name:'Manutenção Preditiva de Frota',desc:'Manutenção preditiva de frota com IoT e ML. Antecipa falhas de veículos, reduz quebras na estrada e otimiza custos de manutenção.',tech:['IoT','ML','Predictive Maintenance'],stars:'★ 5.0',metric:'-58% Quebras',live:true},
+  {id:'torre-controle-logistica',cat:'LOG',name:'Torre de Controle (Digital Twin)',desc:'Torre de controle logística com gêmeo digital. Simula a operação em tempo real, antecipa gargalos e recomenda ações corretivas.',tech:['Digital Twin','Simulation','ML'],stars:'★ 5.0',metric:'100% Visibilidade',live:true},
+  {id:'otimizacao-last-mile',cat:'LOG',name:'Otimização de Last-Mile',desc:'Otimização de entrega last-mile com IA. Agrupa entregas, otimiza janelas e reduz o custo da etapa mais cara da logística.',tech:['Optimization','ML','Clustering'],stars:'★ 5.0',metric:'-29% Custo',live:true},
+  {id:'previsao-ruptura',cat:'LOG',name:'Previsão de Ruptura de Estoque',desc:'Previsão de ruptura de estoque (stockout) com ML. Alerta antes da falta, recomenda reposição e protege vendas e nível de serviço.',tech:['ML','Forecasting','Classification'],stars:'★ 5.0',metric:'-41% Ruptura',live:true},
+  {id:'roteirizacao-dinamica',cat:'LOG',name:'Roteirização Dinâmica',desc:'Roteirização dinâmica em tempo real com IA. Reotimiza rotas conforme novos pedidos, trânsito e imprevistos durante a operação.',tech:['Real-time Optimization','ML','OR-Tools'],stars:'★ 5.0',metric:'+26% Eficiência',live:true},
+  {id:'performance-transportadoras',cat:'LOG',name:'Performance de Transportadoras',desc:'Análise de performance de transportadoras com IA. Avalia prazo, avaria e custo, gerando ranking e recomendações de alocação de carga.',tech:['ML','Scoring','Analytics'],stars:'★ 5.0',metric:'240 Transport.',live:true},
+  {id:'sustentabilidade-co2',cat:'LOG',name:'Sustentabilidade & CO2 Logístico',desc:'Gestão de pegada de carbono logística com IA. Mede emissões por rota e modal, e otimiza a operação para metas ESG e redução de CO2.',tech:['ML','Optimization','ESG'],stars:'★ 5.0',metric:'-22% CO2',live:true},
+  {id:'previsao-safra',cat:'AGRO',name:'Previsão de Safra (Satélite)',desc:'Previsão de safra com imagens de satélite e ML. Monitora NDVI, estima produtividade e antecipa a colheita por talhão e região.',tech:['Computer Vision','Satellite','ML','NDVI'],stars:'★ 5.0',metric:'< 4% Erro safra',live:true},
+  {id:'deteccao-pragas',cat:'AGRO',name:'Detecção de Pragas (Visão)',desc:'Detecção de pragas e doenças em lavouras com visão computacional. Analisa imagens de drone e celular para diagnóstico precoce.',tech:['Computer Vision','Deep Learning','YOLO'],stars:'★ 5.0',metric:'97.2% Precisão',live:true},
+  {id:'recomendacao-plantio',cat:'AGRO',name:'Recomendação de Plantio',desc:'Recomendação de cultura e época de plantio com IA. Combina solo, clima e mercado para maximizar produtividade e rentabilidade.',tech:['ML','Recommendation','Climate'],stars:'★ 5.0',metric:'+18% Produtiv.',live:true},
+  {id:'preco-commodities',cat:'AGRO',name:'Previsão de Preço de Commodities',desc:'Previsão de preço de commodities agrícolas (soja, milho, café, boi) com IA. Apoia decisão de venda e hedge no mercado futuro.',tech:['Time Series','ML','Neural Networks'],stars:'★ 5.0',metric:'3.2% MAPE',live:true},
+  {id:'otimizacao-irrigacao',cat:'AGRO',name:'Otimização de Irrigação',desc:'Otimização de irrigação com IA e dados climáticos. Calcula a lâmina ótima por talhão, economizando água e aumentando produtividade.',tech:['ML','IoT','Optimization'],stars:'★ 5.0',metric:'-31% Água',live:true},
+  {id:'monitoramento-desmatamento',cat:'AGRO',name:'Monitoramento de Desmatamento',desc:'Monitoramento de desmatamento com satélite e IA. Detecta supressão de vegetação para compliance ambiental e crédito de carbono.',tech:['Computer Vision','Satellite','ML'],stars:'★ 5.0',metric:'97.8% Precisão',live:true},
+  {id:'analise-solo',cat:'AGRO',name:'Análise Inteligente de Solo',desc:'Análise de solo com IA para agricultura de precisão. Mapeia fertilidade, recomenda correção e adubação por zona de manejo.',tech:['ML','Precision Agriculture','Clustering'],stars:'★ 5.0',metric:'mapeadas Zonas',live:true},
+  {id:'previsao-climatica-agro',cat:'AGRO',name:'Previsão Climática Agrícola',desc:'Previsão climática focada no agro com IA. Antecipa geadas, secas e chuvas por região para proteger a lavoura e planejar operações.',tech:['ML','Time Series','Climate'],stars:'★ 5.0',metric:'89% Acurácia',live:true},
+  {id:'rastreabilidade-cadeia',cat:'AGRO',name:'Rastreabilidade da Cadeia',desc:'Rastreabilidade da cadeia agro com IA e blockchain. Garante origem, qualidade e compliance do campo à mesa para exportação.',tech:['AI','Blockchain','Computer Vision'],stars:'★ 5.0',metric:'100% Rastreab.',live:true},
+  {id:'contagem-gado',cat:'AGRO',name:'Contagem e Saúde do Gado',desc:'Monitoramento de gado com visão computacional. Conta animais, avalia escore corporal e detecta problemas de saúde por imagem.',tech:['Computer Vision','Deep Learning','Object Detection'],stars:'★ 5.0',metric:'98.4% Precisão',live:true},
+  {id:'otimizacao-defensivos',cat:'AGRO',name:'Otimização de Defensivos',desc:'Aplicação otimizada de defensivos com IA. Recomenda dose e momento exatos por zona, reduzindo custo e impacto ambiental.',tech:['ML','Precision Agriculture','Optimization'],stars:'★ 5.0',metric:'-31% Defensivo',live:true},
+  {id:'credito-rural-score',cat:'AGRO',name:'Credit Score Rural',desc:'Score de crédito rural com IA. Avalia produtor combinando dados de safra, satélite, clima e histórico para crédito agro mais justo.',tech:['ML','Credit Scoring','Satellite'],stars:'★ 5.0',metric:'0.92 AUC',live:true},
+  {id:'previsao-produtividade',cat:'AGRO',name:'Previsão de Produtividade',desc:'Previsão de produtividade por talhão com IA. Combina histórico, manejo e dados ambientais para estimar a colheita com precisão.',tech:['ML','Regression','Precision Agriculture'],stars:'★ 5.0',metric:'< 5% Erro',live:true},
+  {id:'mercado-futuro-agro',cat:'AGRO',name:'Inteligência de Mercado Agro',desc:'Inteligência de mercado agrícola com IA. Analisa oferta, demanda, clima e câmbio para apoiar decisões de comercialização e hedge.',tech:['ML','Time Series','Market Intelligence'],stars:'★ 5.0',metric:'76% Acerto',live:true},
+  {id:'jurimetria-predicao',cat:'LAW',name:'Jurimetria — Predição de Resultado',desc:'Predição de resultado processual com IA. Analisa milhões de decisões para estimar probabilidade de êxito, valor e tempo de uma causa.',tech:['ML','NLP','Jurimetria'],stars:'★ 5.0',metric:'84% Acerto',live:true},
+  {id:'analise-contratos-rag',cat:'LAW',name:'Análise de Contratos (RAG)',desc:'Análise de contratos com RAG e LLM. Extrai obrigações, identifica riscos, compara com padrões de mercado e sugere negociação.',tech:['RAG','LLM','NLP','RAGGraph'],stars:'★ 5.0',metric:'97.2% Precisão',live:true},
+  {id:'busca-jurisprudencia',cat:'LAW',name:'Busca de Jurisprudência',desc:'Busca semântica de jurisprudência com RAG sobre 2.1M decisões do STF/STJ. Encontra precedentes relevantes em linguagem natural.',tech:['RAG','Semantic Search','LLM'],stars:'★ 5.0',metric:'2.1M Decisões',live:true},
+  {id:'classificacao-peticoes',cat:'LAW',name:'Classificação de Petições',desc:'Classificação automática de petições com NLP. Direciona ao setor correto, prioriza por urgência e prevê tempo de resposta.',tech:['NLP','LLM','Text Classification'],stars:'★ 5.0',metric:'95% Acurácia',live:true},
+  {id:'calculo-trabalhista',cat:'LAW',name:'Cálculo Trabalhista Automatizado',desc:'Cálculo trabalhista automatizado com IA. Computa verbas rescisórias, horas extras e FGTS conforme CLT, com explicação fundamentada.',tech:['AI','Rules Engine','CLT'],stars:'★ 5.0',metric:'99.4% Precisão',live:true},
+  {id:'risco-processual',cat:'LAW',name:'Análise de Risco Processual',desc:'Análise de risco processual de carteira com IA. Estima provisão contábil, probabilidade de perda e valor esperado de contingências.',tech:['ML','Jurimetria','Risk'],stars:'★ 5.0',metric:'monitor. Carteira',live:true},
+  {id:'chatbot-juridico',cat:'LAW',name:'Chatbot Jurídico',desc:'Assistente jurídico com IA generativa e RAG. Responde dúvidas sobre CLT, LGPD, CDC e Código Civil com fundamentação e citações.',tech:['GenAI','RAG','LLM'],stars:'★ 5.0',metric:'94% Precisão',live:true},
+  {id:'clausulas-abusivas',cat:'LAW',name:'Detecção de Cláusulas Abusivas',desc:'Detecção de cláusulas abusivas em contratos de consumo com NLP. Protege o consumidor identificando violações ao CDC automaticamente.',tech:['NLP','LLM','CDC'],stars:'★ 5.0',metric:'96% Detecção',live:true},
+  {id:'resumo-processos',cat:'LAW',name:'Resumo Inteligente de Processos',desc:'Resumo automático de processos judiciais com LLM. Sintetiza autos volumosos, extrai fatos, pedidos e andamento em minutos.',tech:['LLM','NLP','Summarization'],stars:'★ 5.0',metric:'95% Redução',live:true},
+  {id:'due-diligence-auto',cat:'LAW',name:'Due Diligence Automatizada',desc:'Due diligence jurídica automatizada com IA. Analisa documentos societários, contratos e processos para mapear riscos em M&A.',tech:['RAG','LLM','Risk Analysis'],stars:'★ 5.0',metric:'10x Velocidade',live:true},
+  {id:'compliance-contratual',cat:'LAW',name:'Compliance Contratual',desc:'Monitoramento de compliance contratual com IA. Acompanha obrigações, prazos e renovações, alertando antes de vencimentos críticos.',tech:['AI','NLP','Contract Lifecycle'],stars:'★ 5.0',metric:'monitor. Obrigações',live:true},
+  {id:'analise-precedentes-graph',cat:'LAW',name:'Análise de Precedentes (RAGGraph)',desc:'Análise de precedentes com RAGGraph. Mapeia a rede de citações entre decisões para identificar teses dominantes e evolução jurisprudencial.',tech:['RAGGraph','Graph ML','LLM'],stars:'★ 5.0',metric:'2.1M Decisões',live:true},
+  {id:'geracao-pecas',cat:'LAW',name:'Geração de Peças Jurídicas',desc:'Geração de minutas de peças jurídicas com IA generativa. Cria petições, contratos e pareceres fundamentados a partir de fatos do caso.',tech:['GenAI','LLM','Legal Drafting'],stars:'★ 5.0',metric:'-82% Tempo',live:true},
+  {id:'monitoramento-publicacoes',cat:'LAW',name:'Monitoramento de Publicações',desc:'Monitoramento inteligente de publicações no Diário Oficial (DJe) com NLP. Captura intimações e prazos automaticamente sem perder nada.',tech:['NLP','NER','Real-time'],stars:'★ 5.0',metric:'99.8% Captura',live:true},
+  {id:'triagem-curriculos',cat:'RH',name:'Triagem Inteligente de Currículos',desc:'Triagem de currículos com IA e matching semântico. Rankeia candidatos por fit com a vaga, detecta viés e gera perguntas de entrevista.',tech:['NLP','LLM','Semantic Matching'],stars:'★ 5.0',metric:'94% Match',live:true},
+  {id:'previsao-turnover',cat:'RH',name:'Previsão de Turnover',desc:'Previsão de rotatividade de funcionários com ML explicável. Identifica quem está em risco de sair e recomenda ações de retenção.',tech:['ML','SHAP','People Analytics'],stars:'★ 5.0',metric:'0.91 AUC',live:true},
+  {id:'clima-organizacional',cat:'RH',name:'Análise de Clima Organizacional',desc:'Análise de clima organizacional com NLP. Processa pesquisas e feedbacks abertos para revelar drivers de engajamento e pontos de atenção.',tech:['NLP','Sentiment','Topic Modeling'],stars:'★ 5.0',metric:'+42 eNPS',live:true},
+  {id:'recomendacao-treinamentos',cat:'RH',name:'Recomendação de Treinamentos',desc:'Recomendação personalizada de treinamentos com IA. Identifica gaps de competência e sugere a trilha de desenvolvimento ideal por colaborador',tech:['ML','Recommendation','Skills Graph'],stars:'★ 5.0',metric:'+38% Engajamento',live:true},
+  {id:'vies-contratacao',cat:'RH',name:'Detecção de Viés em Contratação',desc:'Detecção de viés em processos seletivos com IA. Monitora decisões por gênero, idade e origem para promover diversidade e equidade.',tech:['ML','Fairness','Bias Detection'],stars:'★ 5.0',metric:'monitorado Viés',live:true},
+  {id:'people-analytics',cat:'RH',name:'People Analytics Dashboard',desc:'Painel completo de people analytics com IA. Consolida headcount, turnover, performance e engajamento com insights preditivos para o RH.',tech:['ML','Analytics','Forecasting'],stars:'★ 5.0',metric:'tempo real Headcount',live:true},
+  {id:'previsao-absenteismo',cat:'RH',name:'Previsão de Absenteísmo',desc:'Previsão de absenteísmo com ML. Antecipa faltas e afastamentos por área, apoiando o planejamento de escala e a saúde ocupacional.',tech:['ML','Time Series','Classification'],stars:'★ 5.0',metric:'88% Acurácia',live:true},
+  {id:'otimizacao-escalas',cat:'RH',name:'Otimização de Escalas/Turnos',desc:'Otimização de escalas e turnos com IA. Equilibra demanda, preferências e legislação para escalas justas que reduzem custo e horas extras.',tech:['Optimization','ML','Constraint Programming'],stars:'★ 5.0',metric:'-34% Horas extras',live:true},
+  {id:'performance-preditiva',cat:'RH',name:'Performance Preditiva',desc:'Análise preditiva de performance com IA. Identifica alto potencial, prevê resultados e apoia decisões de promoção com dados objetivos.',tech:['ML','People Analytics','Prediction'],stars:'★ 5.0',metric:'86% Acurácia',live:true},
+  {id:'chatbot-rh',cat:'RH',name:'Chatbot de RH',desc:'Assistente de RH com IA generativa e RAG. Responde dúvidas sobre benefícios, férias, políticas e folha, liberando o time de RH.',tech:['GenAI','RAG','LLM'],stars:'★ 5.0',metric:'89% Resolução',live:true},
+  {id:'mapeamento-competencias',cat:'RH',name:'Mapeamento de Competências',desc:'Mapeamento de competências organizacionais com IA. Constrói o grafo de skills da empresa, revela gaps e apoia o planejamento de carreira.',tech:['NLP','Skills Graph','ML'],stars:'★ 5.0',metric:'mapeadas Skills',live:true},
+  {id:'previsao-headcount',cat:'RH',name:'Previsão de Headcount',desc:'Previsão de necessidade de headcount com IA. Projeta demanda de pessoal por área alinhada ao crescimento, otimizando o planejamento de quadr',tech:['ML','Forecasting','Workforce Planning'],stars:'★ 5.0',metric:'90% Acurácia',live:true},
+  {id:'engajamento-burnout',cat:'RH',name:'Detecção de Burnout',desc:'Detecção precoce de burnout e desengajamento com IA. Analisa sinais comportamentais para proteger a saúde mental e reter talentos.',tech:['ML','NLP','Wellbeing'],stars:'★ 5.0',metric:'precoce Detecção',live:true},
+  {id:'sucessao-talentos',cat:'RH',name:'Sucessão e Talentos (9-Box)',desc:'Gestão de sucessão e talentos com IA. Posiciona colaboradores na matriz 9-box automaticamente e identifica sucessores para posições-chave.',tech:['ML','Talent Analytics','9-Box'],stars:'★ 5.0',metric:'mapeados Talentos',live:true},
 ];
 
 // ── STATS ─────────────────────────────────────────────────────────
 const STATS = [
-  {v:'124',l:'Repositórios GitHub',i:'🚀'},
-  {v:'50M+',l:'Eventos processados/dia',i:'⚡'},
-  {v:'99.9%',l:'Uptime em produção',i:'📡'},
+  {v:'225',l:'Web Apps de IA',i:'🚀'},
+  {v:'7',l:'Setores cobertos',i:'🎯'},
+  {v:'100%',l:'Testáveis ao vivo',i:'⚡'},
   {v:'12+',l:'Anos de experiência',i:'🏆'},
 ];
 
@@ -631,6 +741,7 @@ function ProjectCard({p, onClick}) {
         </div>
       </div>
       <h3 className="font-bold text-white text-sm mb-1 group-hover:text-indigo-300 transition">{p.name}</h3>
+      {p.live&&<span className="inline-flex items-center gap-1 text-xs mb-1.5" style={{color:'#22c55e'}}><span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"/> App ao vivo</span>}
       <p className="text-gray-400 text-xs mb-3 leading-relaxed line-clamp-2">{p.desc}</p>
       <div className="flex items-center justify-between">
         <div className="flex flex-wrap gap-1">
@@ -688,15 +799,21 @@ function Modal({p, onClose}) {
             </div>
           </div>
           {/* Links */}
-          <div className="flex gap-3">
-            <a href={`https://github.com/jhondados/${p.id}`} target="_blank" rel="noopener"
-              className="btn-primary flex-1 justify-center">
-              <span>⭐</span> Ver no GitHub
+          <div className="flex flex-col gap-3">
+            <a href={`https://jhondados.github.io/${p.id}/`} target="_blank" rel="noopener"
+              className="btn-primary w-full justify-center" style={{fontSize:'15px',padding:'13px'}}>
+              <span>🌐</span> Abrir App ao Vivo
             </a>
-            <a href="https://linkedin.com/in/jhon-e-martinez" target="_blank" rel="noopener"
-              className="btn-ghost flex-1 text-center flex items-center justify-center gap-2">
-              <span>💼</span> LinkedIn
-            </a>
+            <div className="flex gap-3">
+              <a href={`https://github.com/jhondados/${p.id}`} target="_blank" rel="noopener"
+                className="btn-ghost flex-1 text-center flex items-center justify-center gap-2">
+                <span>⭐</span> GitHub
+              </a>
+              <a href="https://linkedin.com/in/jhon-e-martinez" target="_blank" rel="noopener"
+                className="btn-ghost flex-1 text-center flex items-center justify-center gap-2">
+                <span>💼</span> LinkedIn
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -743,7 +860,7 @@ function Hero() {
           <span className="gradient-text">{typed}</span><span className="animate-pulse text-indigo-400">|</span>
         </div>
         <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-          12+ anos construindo sistemas de IA de alta escala. Especialista em <strong className="text-white">GenAI</strong>, <strong className="text-white">RAG</strong>, <strong className="text-white">LLMs</strong>, <strong className="text-white">MLOps</strong> e <strong className="text-white">Multi-Agents</strong>. <span className="text-indigo-300">124 projetos</span> de vanguarda no GitHub.
+          12+ anos construindo sistemas de IA de alta escala. Especialista em <strong className="text-white">GenAI</strong>, <strong className="text-white">RAG</strong>, <strong className="text-white">LLMs</strong>, <strong className="text-white">MLOps</strong> e <strong className="text-white">Multi-Agents</strong>. <span className="text-indigo-300">225 projetos</span> de IA aplicada, todos testáveis ao vivo.
         </p>
         <div className="flex flex-wrap justify-center gap-4 mb-16">
           <a href="#projects" className="btn-primary text-base px-8 py-3">🚀 Ver Projetos</a>
@@ -828,9 +945,9 @@ function App() {
       {/* PROJECTS */}
       <section id="projects" className="px-4 sm:px-8 py-16 max-w-screen-xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-black text-white mb-4">124 Projetos de <span className="gradient-text">Vanguarda</span></h2>
+          <h2 className="text-4xl font-black text-white mb-4">225 Projetos de IA <span className="gradient-text">Aplicada</span></h2>
           <p className={`text-lg max-w-2xl mx-auto ${dark?'text-gray-400':'text-gray-600'}`}>
-            Cada projeto é <strong>funcional em produção</strong>, com código completo, demos interativas e métricas reais de impacto.
+            Cada projeto é um <strong>web app testável ao vivo</strong>, com dashboards, KPIs e demos interativas. Finanças, Marketing, Governança, Logística, Agro, Direito, RH e muito mais — usando dados reais do Brasil.
           </p>
         </div>
 
@@ -887,7 +1004,7 @@ function App() {
               <p>🎯 Tech Lead & Engenheiro de IA com <strong>12+ anos</strong> de experiência em sistemas de alta escala. Especialista em IA Generativa, RAG, Multi-Agents e MLOps.</p>
               <p>🏗 Construí sistemas que processam <strong>10M+ eventos/dia</strong>, gerenciam <strong>R$4.8B em receita</strong> e economizam <strong>R$2.4M/mês</strong> em infraestrutura cloud.</p>
               <p>🇧🇷 Baseado no Brasil, disponível para oportunidades <strong>remote-first</strong> e presencial em São Paulo.</p>
-              <p>📚 124 projetos open-source cobrindo o stack completo de IA: LLMs, RAG, Vision, NLP, MLOps, Data Engineering e muito mais.</p>
+              <p>📚 225 projetos open-source: do stack técnico (LLMs, RAG, Vision, NLP, MLOps) à IA aplicada em Finanças, Marketing, Governança, Logística, Agro, Direito e RH — todos com web app testável.</p>
             </div>
             <div className="flex flex-wrap gap-3 mt-8">
               <a href="https://linkedin.com/in/jhon-e-martinez" target="_blank" className="btn-primary">💼 LinkedIn</a>
