@@ -3,13 +3,33 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Jhon E. Martinez — Tech Lead · GenAI · ML Engineer | 124 AI Projects</title>
-<meta name="description" content="Portfolio de Jhon E. Martinez — Tech Lead, GenAI & ML Engineer. 225 web apps de IA testáveis ao vivo: Finanças, Marketing, Governança, Logística, Agro, Direito, RH. RAG, LLMs, MLOps, dados reais do Brasil."/>
-<meta name="keywords" content="Tech Lead, GenAI Engineer, Machine Learning, RAG, LLM, LangChain, CrewAI, LangGraph, Python, BigQuery, Vertex AI, MLOps, Data Science, Engenheiro IA, Brasil"/>
-<meta property="og:title" content="Jhon E. Martinez — 124 Projetos de IA de Vanguarda"/>
-<meta property="og:description" content="Tech Lead & GenAI Engineer com 124 projetos: RAG, LLMs, Multi-agents, MLOps e muito mais."/>
+<title>Jhon E. Martinez — Tech Lead · GenAI · ML Engineer | 247 Web Apps de IA</title>
+<meta name="description" content="Portfolio de Jhon E. Martinez — Tech Lead, GenAI & ML Engineer. 247 web apps de IA testáveis ao vivo: Finanças, Marketing, Governança, Logística, Agro, Direito, RH, Educação e Editoras. RAG, LLMs, MLOps, dados reais do Brasil."/>
+<meta name="keywords" content="Tech Lead, GenAI Engineer, Machine Learning Engineer, Cientista de Dados, RAG, RAGGraph, LLM, LangChain, CrewAI, LangGraph, Python, BigQuery, Vertex AI, MLOps, Data Science, Engenheiro IA, Inteligência Artificial, Brasil, churn, retenção de clientes, previsão de vendas, chatbot, agentes IA, portfolio IA, Jhon Martinez, jhondados"/>
+<meta name="author" content="Jhon Enrique Cernadas Martinez"/>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"/>
+<link rel="canonical" href="https://jhondados.github.io/portfolio/"/>
 <meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Jhon E. Martinez — Portfolio de IA"/>
+<meta property="og:locale" content="pt_BR"/>
+<meta property="og:url" content="https://jhondados.github.io/portfolio/"/>
+<meta property="og:title" content="Jhon E. Martinez — 247 Web Apps de IA Aplicada"/>
+<meta property="og:description" content="247 web apps de IA testáveis ao vivo em 9 setores, com dashboards, KPIs e dados reais do Brasil. RAG, LLMs, MLOps, Agentes IA."/>
+<meta property="og:image" content="https://placehold.co/1200x630/6366f1/ffffff/png?text=Jhon+E.+Martinez+-+247+AI+Web+Apps"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
 <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Jhon E. Martinez — 247 Web Apps de IA Aplicada"/>
+<meta name="twitter:description" content="247 web apps de IA testáveis ao vivo, com dashboards e dados reais do Brasil."/>
+<meta name="twitter:image" content="https://placehold.co/1200x630/6366f1/ffffff/png?text=Jhon+E.+Martinez+-+247+AI+Web+Apps"/>
+<meta name="twitter:creator" content="@jhondados"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Person","@id":"https://jhondados.github.io/portfolio/#person","name":"Jhon Enrique Cernadas Martinez","alternateName":"Jhon E. Martinez","jobTitle":"Tech Lead · GenAI Engineer · ML Engineer","description":"Tech Lead e Engenheiro de IA com 12+ anos de experiência. 247 web apps de IA aplicada.","url":"https://jhondados.github.io/portfolio/","image":"https://github.com/jhondados.png","sameAs":["https://github.com/jhondados","https://linkedin.com/in/jhon-e-martinez"],"knowsAbout":["Inteligência Artificial","Machine Learning","RAG","LLM","GenAI","MLOps","Data Science","Deep Learning","Python","LangChain"],"nationality":"Brasil"},
+{"@type":"WebSite","@id":"https://jhondados.github.io/portfolio/#website","url":"https://jhondados.github.io/portfolio/","name":"Jhon E. Martinez — Portfolio de IA","inLanguage":"pt-BR","author":{"@id":"https://jhondados.github.io/portfolio/#person"}},
+{"@type":"CollectionPage","name":"247 Web Apps de IA Aplicada","description":"Coleção de 247 projetos de IA testáveis ao vivo em 9 setores.","url":"https://jhondados.github.io/portfolio/","isPartOf":{"@id":"https://jhondados.github.io/portfolio/#website"},"about":["Finanças","Marketing","Governança","Logística","Agro","Direito","Recursos Humanos","Educação","Editoras"]}
+]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com"></script>
@@ -126,12 +146,15 @@ const CATEGORIES = {
   AGRO:  { label:'Agro',             color:'#22c55e', bg:'rgba(34,197,94,.15)',   icon:'🌱' },
   LAW:   { label:'Direito',          color:'#8b5cf6', bg:'rgba(139,92,246,.15)',  icon:'⚖️' },
   RH:    { label:'Recursos Humanos', color:'#06b6d4', bg:'rgba(6,182,212,.15)',   icon:'👥' },
+  EDU:   { label:'Educação',         color:'#f43f5e', bg:'rgba(244,63,94,.15)',   icon:'🎓' },
+  EDIT:  { label:'Editoras',         color:'#0ea5e9', bg:'rgba(14,165,233,.15)',  icon:'📚' },
 };
 
 const DEMO_TYPES = {
   RAG:'rag', AGENT:'agent', LLM:'llm', MLOPS:'pipeline', DATA:'pipeline',
   CV:'vision', NLP:'nlp', BRAZ:'chat', SEC:'security', SCI:'chart',
-  FIN:'chart', MKT:'chart', GOV:'pipeline', LOG:'pipeline', AGRO:'chart', LAW:'chat', RH:'chart'
+  FIN:'chart', MKT:'chart', GOV:'pipeline', LOG:'pipeline', AGRO:'chart', LAW:'chat', RH:'chart',
+  EDU:'chart', EDIT:'chart'
 };
 
 const PROJECTS = [
@@ -335,11 +358,34 @@ const PROJECTS = [
   {id:'previsao-headcount',cat:'RH',name:'Previsão de Headcount',desc:'Previsão de necessidade de headcount com IA. Projeta demanda de pessoal por área alinhada ao crescimento, otimizando o planejamento de quadr',tech:['ML','Forecasting','Workforce Planning'],stars:'★ 5.0',metric:'90% Acurácia',live:true},
   {id:'engajamento-burnout',cat:'RH',name:'Detecção de Burnout',desc:'Detecção precoce de burnout e desengajamento com IA. Analisa sinais comportamentais para proteger a saúde mental e reter talentos.',tech:['ML','NLP','Wellbeing'],stars:'★ 5.0',metric:'precoce Detecção',live:true},
   {id:'sucessao-talentos',cat:'RH',name:'Sucessão e Talentos (9-Box)',desc:'Gestão de sucessão e talentos com IA. Posiciona colaboradores na matriz 9-box automaticamente e identifica sucessores para posições-chave.',tech:['ML','Talent Analytics','9-Box'],stars:'★ 5.0',metric:'mapeados Talentos',live:true},
+
+  {id:'editora-churn-escolas',cat:'EDIT',name:'Previsão de Churn de Escolas',desc:'Prevê quais escolas/clientes de uma editora não vão renovar a adoção de livros didáticos. Identifica risco de cancelamento com meses de ante',tech:['Machine Learning','Survival Analysis','SHAP','Churn Prediction'],stars:'★ 5.0',metric:'0.93 AUC-ROC',live:true},
+  {id:'editora-retencao-clientes',cat:'EDIT',name:'Retenção de Clientes Editoriais',desc:'Plataforma de retenção para editoras: combina uplift modeling e IA generativa para escolher a melhor oferta, canal e mensagem por cliente, m',tech:['Uplift Modeling','GenAI','ML','Next-Best-Action'],stars:'★ 5.0',metric:'+28% Renovação',live:true},
+  {id:'editora-previsao-vendas',cat:'EDIT',name:'Previsão de Vendas de Livros',desc:'Previsão de vendas de títulos por região, canal e período com séries temporais e ML. Antecipa demanda de tiragem, evita encalhe e ruptura, e',tech:['Time Series','LightGBM','Demand Forecasting'],stars:'★ 5.0',metric:'5.4% MAPE',live:true},
+  {id:'editora-recomendacao-titulos',cat:'EDIT',name:'Recomendação de Títulos',desc:'Motor de recomendação de livros e materiais para escolas, professores e leitores. Filtragem colaborativa + conteúdo sugere o título ideal po',tech:['Neural Networks','Collaborative Filtering','NLP'],stars:'★ 5.0',metric:'+42% CTR',live:true},
+  {id:'editora-analise-adocao',cat:'EDIT',name:'Análise de Adoção PNLD',desc:'Inteligência de mercado para o PNLD: analisa adoções, market share e tendências de escolha de livros didáticos por município, rede e discipl',tech:['ML','Market Intelligence','Geospatial'],stars:'★ 5.0',metric:'mapeado Market share',live:true},
+  {id:'editora-sentimento-resenhas',cat:'EDIT',name:'Análise de Resenhas de Livros',desc:'Análise de sentimento e tópicos de resenhas e avaliações de livros (Skoob, Amazon, redes). Revela o que leitores e professores amam ou criti',tech:['NLP','Sentiment','Topic Modeling','BERTimbau'],stars:'★ 5.0',metric:'0.93 F1 PT-BR',live:true},
+  {id:'editora-precificacao-livros',cat:'EDIT',name:'Precificação Inteligente de Livros',desc:'Precificação dinâmica e otimizada de livros e e-books com ML. Calcula o preço que maximiza receita por título e canal, considerando elastici',tech:['ML','Price Elasticity','Optimization'],stars:'★ 5.0',metric:'+16% Receita',live:true},
+  {id:'editora-assistente-editorial',cat:'EDIT',name:'Assistente Editorial com IA',desc:'Assistente de IA generativa para editoras: avalia originais, sugere revisões, gera sinopses, palavras-chave e metadados, e estima potencial ',tech:['GenAI','LLM','RAG'],stars:'★ 5.0',metric:'10x Triagem',live:true},
+  {id:'editora-distribuicao-otimizada',cat:'EDIT',name:'Otimização de Distribuição',desc:'Otimização da distribuição de livros para livrarias, escolas e CDs. Reduz custo logístico e tempo de entrega, equilibrando estoque entre pon',tech:['Optimization','ML','Supply Chain'],stars:'★ 5.0',metric:'-22% Custo',live:true},
+  {id:'editora-clv-leitor',cat:'EDIT',name:'Customer Lifetime Value do Leitor',desc:'Previsão do valor vitalício de leitores e clientes de clubes de assinatura de livros. Identifica leitores de alto valor, otimiza aquisição e',tech:['ML','BG/NBD','Probabilistic'],stars:'★ 5.0',metric:'88% Precisão CLV',live:true},
+  {id:'editora-deteccao-pirataria',cat:'EDIT',name:'Detecção de Pirataria Digital',desc:'Detecção de pirataria de livros e materiais didáticos com IA. Rastreia cópias ilegais na web, identifica padrões de distribuição e protege a',tech:['ML','NLP','Web Intelligence'],stars:'★ 5.0',metric:'94% Detecção',live:true},
+  {id:'edu-evasao-escolar',cat:'EDU',name:'Previsão de Evasão Escolar',desc:'Prevê risco de evasão de alunos com IA explicável, semanas antes do abandono. Combina notas, frequência, engajamento e contexto socioeconômi',tech:['Machine Learning','SHAP','Early Warning'],stars:'★ 5.0',metric:'0.91 AUC',live:true},
+  {id:'edu-desempenho-alunos',cat:'EDU',name:'Previsão de Desempenho de Alunos',desc:'Prevê desempenho de alunos em provas e no ENEM com ML. Identifica lacunas de aprendizagem por competência e recomenda plano de estudo person',tech:['Machine Learning','Knowledge Tracing','ML'],stars:'★ 5.0',metric:'87% Acerto',live:true},
+  {id:'edu-tutor-ia',cat:'EDU',name:'Tutor Inteligente com IA',desc:'Tutor educacional com IA generativa e RAG que tira dúvidas, explica conteúdos no nível do aluno e guia com método socrático — sem dar a resp',tech:['GenAI','RAG','LLM','Socratic'],stars:'★ 5.0',metric:'89% Resolução',live:true},
+  {id:'edu-recomendacao-conteudo',cat:'EDU',name:'Recomendação de Conteúdo Educacional',desc:'Recomenda trilhas, vídeos e exercícios ideais para cada aluno com base em desempenho e estilo de aprendizagem, criando uma jornada adaptativ',tech:['Neural Networks','Adaptive Learning','Recommendation'],stars:'★ 5.0',metric:'+38% Engajamento',live:true},
+  {id:'edu-correcao-redacao',cat:'EDU',name:'Correção Automática de Redação',desc:'Correção automática de redações no modelo ENEM com IA. Avalia as 5 competências, aponta erros, sugere melhorias e dá nota com feedback pedag',tech:['NLP','LLM','Deep Learning'],stars:'★ 5.0',metric:'0.89 Correlação',live:true},
+  {id:'edu-churn-edtech',cat:'EDU',name:'Churn de Plataforma EdTech',desc:'Previsão de churn para edtechs e cursos online. Identifica alunos prestes a cancelar a assinatura e dispara ações de reengajamento personali',tech:['Machine Learning','Churn','Engagement Analytics'],stars:'★ 5.0',metric:'0.92 AUC',live:true},
+  {id:'edu-analise-frequencia',cat:'EDU',name:'Análise Preditiva de Frequência',desc:'Monitora e prevê frequência escolar com IA, sinalizando padrões de faltas que antecedem a evasão. Apoia gestores na busca ativa e na recompo',tech:['ML','Time Series','Early Warning'],stars:'★ 5.0',metric:'88% Acurácia',live:true},
+  {id:'edu-vendas-cursos',cat:'EDU',name:'Previsão de Vendas de Cursos',desc:'Previsão de matrículas e vendas de cursos para edtechs e instituições. Antecipa demanda por curso e período, otimiza marketing e dimensiona ',tech:['Time Series','ML','Demand Forecasting'],stars:'★ 5.0',metric:'6.1% MAPE',live:true},
+  {id:'edu-segmentacao-alunos',cat:'EDU',name:'Segmentação de Alunos',desc:'Segmenta alunos por perfil de aprendizagem, engajamento e risco usando clustering. Permite estratégias pedagógicas e de comunicação personal',tech:['Machine Learning','Clustering','Learning Analytics'],stars:'★ 5.0',metric:'6 Segmentos',live:true},
+  {id:'edu-qualidade-ensino',cat:'EDU',name:'Análise de Qualidade de Ensino',desc:'Painel de IA para monitorar qualidade do ensino por escola e rede. Cruza IDEB, ENEM, frequência e infraestrutura para identificar fatores de',tech:['ML','Causal Inference','Analytics'],stars:'★ 5.0',metric:'monitor. Escolas',live:true},
+  {id:'edu-recomendacao-carreira',cat:'EDU',name:'Orientação de Carreira com IA',desc:'Orientador de carreira com IA que recomenda cursos e profissões alinhados ao perfil, desempenho e ao mercado de trabalho do aluno, usando da',tech:['ML','Recommendation','NLP'],stars:'★ 5.0',metric:'91% Match',live:true},
 ];
 
 // ── STATS ─────────────────────────────────────────────────────────
 const STATS = [
-  {v:'225',l:'Web Apps de IA',i:'🚀'},
+  {v:'247',l:'Web Apps de IA',i:'🚀'},
   {v:'7',l:'Setores cobertos',i:'🎯'},
   {v:'100%',l:'Testáveis ao vivo',i:'⚡'},
   {v:'12+',l:'Anos de experiência',i:'🏆'},
@@ -860,7 +906,7 @@ function Hero() {
           <span className="gradient-text">{typed}</span><span className="animate-pulse text-indigo-400">|</span>
         </div>
         <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-          12+ anos construindo sistemas de IA de alta escala. Especialista em <strong className="text-white">GenAI</strong>, <strong className="text-white">RAG</strong>, <strong className="text-white">LLMs</strong>, <strong className="text-white">MLOps</strong> e <strong className="text-white">Multi-Agents</strong>. <span className="text-indigo-300">225 projetos</span> de IA aplicada, todos testáveis ao vivo.
+          12+ anos construindo sistemas de IA de alta escala. Especialista em <strong className="text-white">GenAI</strong>, <strong className="text-white">RAG</strong>, <strong className="text-white">LLMs</strong>, <strong className="text-white">MLOps</strong> e <strong className="text-white">Multi-Agents</strong>. <span className="text-indigo-300">247 projetos</span> de IA aplicada, todos testáveis ao vivo.
         </p>
         <div className="flex flex-wrap justify-center gap-4 mb-16">
           <a href="#projects" className="btn-primary text-base px-8 py-3">🚀 Ver Projetos</a>
@@ -945,7 +991,7 @@ function App() {
       {/* PROJECTS */}
       <section id="projects" className="px-4 sm:px-8 py-16 max-w-screen-xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-black text-white mb-4">225 Projetos de IA <span className="gradient-text">Aplicada</span></h2>
+          <h2 className="text-4xl font-black text-white mb-4">247 projetos de IA <span className="gradient-text">Aplicada</span></h2>
           <p className={`text-lg max-w-2xl mx-auto ${dark?'text-gray-400':'text-gray-600'}`}>
             Cada projeto é um <strong>web app testável ao vivo</strong>, com dashboards, KPIs e demos interativas. Finanças, Marketing, Governança, Logística, Agro, Direito, RH e muito mais — usando dados reais do Brasil.
           </p>
@@ -1004,7 +1050,7 @@ function App() {
               <p>🎯 Tech Lead & Engenheiro de IA com <strong>12+ anos</strong> de experiência em sistemas de alta escala. Especialista em IA Generativa, RAG, Multi-Agents e MLOps.</p>
               <p>🏗 Construí sistemas que processam <strong>10M+ eventos/dia</strong>, gerenciam <strong>R$4.8B em receita</strong> e economizam <strong>R$2.4M/mês</strong> em infraestrutura cloud.</p>
               <p>🇧🇷 Baseado no Brasil, disponível para oportunidades <strong>remote-first</strong> e presencial em São Paulo.</p>
-              <p>📚 225 projetos open-source: do stack técnico (LLMs, RAG, Vision, NLP, MLOps) à IA aplicada em Finanças, Marketing, Governança, Logística, Agro, Direito e RH — todos com web app testável.</p>
+              <p>📚 247 projetos open-source: do stack técnico (LLMs, RAG, Vision, NLP, MLOps) à IA aplicada em Finanças, Marketing, Governança, Logística, Agro, Direito e RH — todos com web app testável.</p>
             </div>
             <div className="flex flex-wrap gap-3 mt-8">
               <a href="https://linkedin.com/in/jhon-e-martinez" target="_blank" className="btn-primary">💼 LinkedIn</a>
@@ -1053,3 +1099,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
 </script>
 </body>
 </html>
+
